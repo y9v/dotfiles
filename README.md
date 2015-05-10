@@ -1,7 +1,8 @@
 # Readme
 
 This is my dotfiles repository.
-!['screenshot']("http://s13.postimg.org/kp9t7we13/screen.png")
+
+![img](http://s13.postimg.org/kp9t7we13/screen.png)
 
 Note that I'm using:
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
