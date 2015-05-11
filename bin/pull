@@ -7,5 +7,5 @@ manifest = YAML.load_file('manifest.yml')
 
 manifest['files'].each do |file|
   puts "Moving file ~/#{file} to ./dotfiles/#{file}"
-  FileUtils.copy File.expand_path("~/#{file}"), "./dotfiles/"
+  FileUtils.copy File.expand_path("~/#{file}"), "./dotfiles/#{file}"
 end
