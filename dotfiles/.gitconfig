@@ -1,0 +1,23 @@
+[user]
+  name = Yury Lebedev
+  email = lebedev.yurii@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[push]
+  default = simple
+
+[core]
+  editor = /usr/bin/vim
+
+[help]
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
+
+[alias]
+  # List contributors with number of commits
+  contributors = shortlog --summary --numbered
+
+[commit]
+  template = /Users/lebedev/.gitmessage

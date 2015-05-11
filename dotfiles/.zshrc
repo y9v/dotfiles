@@ -2,28 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="avit"
-
-# Create and checkout to branch #{nick}-#{original_branch}_#{specified_message}
-branchit () {
-  if [ $# -eq 0 ]
-  then
-    echo 'no branchname specified'
-  else
-    local branch_name=$(echo $* | sed -e 's/ /_/g')
-    git checkout -b $(git config github.user)-$(git rev-parse --abbrev-ref HEAD)_$branch_name
-  fi
-}
-
-# Drop all merged branches
-brdrop () {
-  git branch --merged | grep -v \* | xargs git branch -D
-}
-# FUUCK
-alias fuck='$(thefuck $(fc -ln -1))'
+ZSH_THEME="ylebedev"
 
 # Trim linebreaks and copy to clipboard
 alias clip="tr -d '\n' | pbcopy"
@@ -48,7 +27,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# ctags
+# Ctags
 alias update_ctags="ctags -R -f .tags ."
 
 # Make folder and go to it
@@ -61,44 +40,25 @@ alias vimrc.after="vim ~/.vimrc.after"
 alias tmux.conf="vim ~/.tmux.conf"
 alias gitconfig="vim ~/.gitconfig"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-# User configuration
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export EDITOR='vim'
-# export MANPATH="/usr/local/man:$MANPATH"
+HIST_STAMPS="dd.mm.yyyy"
+
+# Zsh plugins
+plugins=(git tmux bundler brew gem ruby rails)
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
+export GOPATH="$HOME/go"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
+export EDITOR="vim"
+export BUNDLER_EDITOR="vim"
+
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+ssh-add > /dev/null 2>&1
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# rbenv init
+eval "$(rbenv init -)"

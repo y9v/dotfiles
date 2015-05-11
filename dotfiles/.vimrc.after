@@ -27,7 +27,6 @@ map <c-\> :pop<CR>
 map <leader>b :BuffergatorToggle<CR>
 map <leader>t :BuffergatorTabsToggle<CR>
 
-
 let NERDTreeMinimalUI=1
 let g:gundo_right=1
 let g:gist_detect_filetype=1

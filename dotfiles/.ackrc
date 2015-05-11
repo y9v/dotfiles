@@ -1,0 +1,7 @@
+# Ignore rails specific folders
+--ignore-directory=is:log
+--ignore-directory=is:tmp
+
+# Types for templating languages
+--type-add=ruby:ext:haml,slim
+--type-add=handlebars:ext:handlebars,hbs,hamlbars,emblem
