@@ -11,6 +11,7 @@ Note that I'm using:
   - [powerline](https://github.com/powerline/powerline)
   - [ack](http://beyondgrep.com/)
   - [ctags](http://ctags.sourceforge.net/)
+  - [pgcli](http://pgcli.com/)
 
 ### Usage
 
