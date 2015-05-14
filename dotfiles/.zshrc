@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export GOPATH="$HOME/go"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
 export EDITOR="vim"
 export BUNDLER_EDITOR="vim"
 
