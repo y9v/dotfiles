@@ -12,6 +12,7 @@ Note that I'm using:
   - [ack](http://beyondgrep.com/)
   - [ctags](http://ctags.sourceforge.net/)
   - [pgcli](http://pgcli.com/)
+  - [tig](http://jonas.nitro.dk/tig/)
 
 ### Usage
 
