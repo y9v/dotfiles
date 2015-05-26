@@ -2,6 +2,9 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
 ZSH_THEME="ylebedev"
 
 # Trim linebreaks and copy to clipboard
@@ -15,7 +18,7 @@ alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Get OS X Software Updates and Homebrew formulas
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; (cd ~/.vim && rake)'
+alias update='brew update; brew upgrade --all; brew cleanup; (cd ~/.vim && rake); upgrade_oh_my_zsh'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -27,11 +30,14 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Ctags
+# Index ctags
 alias update_ctags="ctags -R -f .tags ."
 
 # Make folder and go to it
 mkcd() { mkdir -p "$1" && cd "$1" }
+
+# Run single ruby test
+single_test() { bundle exec ruby -I"lib:test" "test/$1_test.rb" }
 
 # Config files aliases
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
@@ -40,6 +46,7 @@ alias vimrc.after="vim ~/.vimrc.after"
 alias tmux.conf="vim ~/.tmux.conf"
 alias gitconfig="vim ~/.gitconfig"
 
+# Date format for commands
 HIST_STAMPS="dd.mm.yyyy"
 
 # Zsh plugins
@@ -49,16 +56,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export GOPATH="$HOME/go"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
 export EDITOR="vim"
 export BUNDLER_EDITOR="vim"
-
-# You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# ssh
+# Load ssh keys
 ssh-add > /dev/null 2>&1
 
-# rbenv init
+# rbevn
 eval "$(rbenv init -)"
