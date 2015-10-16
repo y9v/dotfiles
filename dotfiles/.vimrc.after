@@ -10,10 +10,8 @@ set noshowmode
 set nobackup
 set nowritebackup
 set noswapfile
-set updatetime=500
 
 nmap F :FixWhitespace<CR>
-nmap f<CR> :tabnew %<CR>
 nmap q<CR> :tabclose<CR>
 map r :redo<CR>
 map U :GundoToggle<CR>
@@ -23,22 +21,26 @@ map <c-t> :TagbarToggle<CR>
 vmap <c-y> "+y
 nmap <c-y> "+yy
 map <c-p> "+p
-map <c-\> :pop<CR>
-map <leader>b :BuffergatorToggle<CR>
-map <leader>t :BuffergatorTabsToggle<CR>
+
+function OpenInNewTab()
+  let l:winview = winsaveview()
+  execute 'tabnew %'
+  call winrestview(l:winview)
+endfunction
+nmap f<CR> :call OpenInNewTab()<CR>
 
 let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
+
 let g:gundo_right=1
 let g:gist_detect_filetype=1
 let g:gist_show_privates=1
 let g:gist_post_private=1
-let g:tagbar_compact=1
 
 hi NonText ctermfg=234
 
+let &colorcolumn=join(range(81,81),",")
+hi ColorColumn ctermbg=235
+
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
-
-let g:ctrlp_by_filename = 1
-
