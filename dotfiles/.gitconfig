@@ -21,3 +21,6 @@
 
 [commit]
   template = /Users/lebedev/.gitmessage
+
+[rerere]
+	enabled = true
