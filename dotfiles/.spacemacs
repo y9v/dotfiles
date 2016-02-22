@@ -23,7 +23,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (osx :variables osx-use-option-as-meta nil)
+     osx
      eyebrowse
      git
      github
@@ -40,6 +40,7 @@ values."
              shell-default-height 30
              shell-default-position 'bottom)
      syntax-checking
+     deft
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -255,6 +256,10 @@ layers configuration. You are free to put any user code."
   (global-linum-mode)
   (setq neo-theme 'nerd)
   (setq powerline-default-separator 'arrow)
+  (setq sp-highlight-pair-overlay nil)
+
+  (setq deft-extensions '("md"))
+  (setq deft-directory "~/iCloud/com~apple~Notes")
 
   (autoload 'coffee-mode "coffee-mode"
     "Major mode for editing Coffeescript files" t)
