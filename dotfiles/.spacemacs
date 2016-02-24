@@ -40,6 +40,7 @@ values."
              shell-default-height 30
              shell-default-position 'bottom)
      syntax-checking
+     swift
      deft
      )
    ;; List of additional packages that will be installed without being
