@@ -18,7 +18,7 @@ alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Get OS X Software Updates and Homebrew formulas
-alias update='brew update; brew upgrade --all; brew cleanup; (cd ~/.vim && rake); upgrade_oh_my_zsh'
+alias update='brew update; brew upgrade; brew cleanup; (cd ~/.vim && rake); upgrade_oh_my_zsh'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
