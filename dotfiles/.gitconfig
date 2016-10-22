@@ -9,7 +9,7 @@
   default = simple
 
 [core]
-  editor = /usr/bin/vim
+  editor = vim
 
 [help]
   # Automatically correct and execute mistyped commands
@@ -20,7 +20,11 @@
   contributors = shortlog --summary --numbered
 
 [commit]
-  template = /Users/lebedev/.gitmessage
+  template = /Users/y.lebedev/.gitmessage
 
 [rerere]
 	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

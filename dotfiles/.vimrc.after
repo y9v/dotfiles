@@ -1,4 +1,46 @@
-colors hybrid
+set background=dark
+colorscheme hybrid
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+set autoread
+set numberwidth=1
+set noshowmode
+set nobackup
+set nowritebackup
+set noswapfile
+
+nmap F :FixWhitespace<CR>
+nmap q<CR> :tabclose<CR>
+map r :redo<CR>
+map U :GundoToggle<CR>
+map <c-e> :CtrlP<CR>
+map <leader><c-e> :CtrlPTag<CR>
+map <c-t> :TagbarToggle<CR>
+vmap <c-y> "+y
+nmap <c-y> "+yy
+map <c-p> "+p
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_max_depth = 40
+let g:ctrlp_use_caching = 0
+
+let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
+
+let g:gundo_right=1
+let g:gist_detect_filetype=1
+let g:gist_show_privates=1
+let g:gist_post_private=1
+
+hi NonText ctermfg=234
+
+let &colorcolumn=join(range(81,81),",")
+hi ColorColumn ctermbg=235
+
+au InsertEnter * set cursorline
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()

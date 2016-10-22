@@ -33,6 +33,9 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Index ctags
 alias update_ctags="ctags -R -f .tags ."
 
+# Other aliases
+alias mux="tmuxinator"
+
 # Make folder and go to it
 mkcd() { mkdir -p "$1" && cd "$1" }
 
@@ -65,5 +68,6 @@ export LANG=en_US.UTF-8
 # Load ssh keys
 ssh-add > /dev/null 2>&1
 
-# rbevn
-eval "$(rbenv init -)"
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
