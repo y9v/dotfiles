@@ -30,6 +30,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Disable clear command
+alias clear="ECHO 'forget it'"
+
 # Index ctags
 alias update_ctags="ctags -R -f .tags ."
 

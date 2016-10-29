@@ -20,7 +20,7 @@
   contributors = shortlog --summary --numbered
 
 [commit]
-  template = /Users/y.lebedev/.gitmessage
+  template = ~/.gitmessage
 
 [rerere]
 	enabled = true
