@@ -18,11 +18,6 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      osx
      git
      github
@@ -32,6 +27,7 @@ values."
      ruby-on-rails
      ess
      yaml
+     python
      javascript
      typescript
      react
@@ -45,7 +41,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+    seeing-is-believing
+    )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(vi-tilde-fringe)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -255,7 +253,7 @@ layers configuration. You are free to put any user code."
   (setq yaml-indent-offset 2)
 
   (setq deft-extensions '("md"))
-  (setq deft-directory "~/iCloud/com~apple~Notes")
+  (setq deft-directory "~/iCloud/Notes")
 
   (autoload 'coffee-mode "coffee-mode"
     "Major mode for editing Coffeescript files" t)
@@ -272,10 +270,14 @@ layers configuration. You are free to put any user code."
     js2-basic-offset 2
     js2-strict-semi-warning nil
     js2-missing-semi-one-line-override nil
+    css-indent-offset 2
     web-mode-markup-indent-offset 2
     web-mode-css-indent-offset 2
     web-mode-code-indent-offset 2
     web-mode-indent-style 2)
+
+  (require 'seeing-is-believing)
+  (add-hook 'ruby-mode-hook 'seeing-is-believing)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
