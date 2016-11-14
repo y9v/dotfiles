@@ -254,6 +254,7 @@ layers configuration. You are free to put any user code."
 
   (setq deft-extensions '("md"))
   (setq deft-directory "~/iCloud/Notes")
+  (setq deft-auto-save-interval 600)
 
   (autoload 'coffee-mode "coffee-mode"
     "Major mode for editing Coffeescript files" t)
