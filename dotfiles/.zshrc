@@ -71,6 +71,9 @@ export LANG=en_US.UTF-8
 # Load ssh keys
 ssh-add > /dev/null 2>&1
 
+# Go path
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

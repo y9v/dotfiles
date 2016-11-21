@@ -1,4 +1,5 @@
 bootstrap:
+	- brew bundle
 	- rm ~/.zshrc
 	- ln -s ~/dotfiles/dotfiles/.zshrc ~/.zshrc
 	- rm ~/.gitconfig
