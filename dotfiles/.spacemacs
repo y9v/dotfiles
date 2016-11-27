@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     sql
      osx
      git
      github
@@ -255,6 +256,9 @@ layers configuration. You are free to put any user code."
   (setq deft-extensions '("md"))
   (setq deft-directory "~/iCloud/Notes")
   (setq deft-auto-save-interval 600)
+
+  (setq dotspacemacs-which-key-delay 0.01)
+  (setq neo-vc-integration nil)
 
   (autoload 'coffee-mode "coffee-mode"
     "Major mode for editing Coffeescript files" t)
