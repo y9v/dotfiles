@@ -251,20 +251,18 @@ layers configuration. You are free to put any user code."
   (setq neo-theme 'nerd)
   (setq powerline-default-separator 'arrow)
   (setq sp-highlight-pair-overlay nil)
-  (setq yaml-indent-offset 2)
+  (setq dotspacemacs-which-key-delay 0.01)
+  (setq neo-vc-integration nil)
+  (setq persp-auto-save-persps-to-their-file nil)
+  (setq backup-directory-alist `(("." . "~/.spacemacs-temp")))
 
   (setq deft-extensions '("md"))
   (setq deft-directory "~/iCloud/Notes")
   (setq deft-auto-save-interval 600)
 
-  (setq dotspacemacs-which-key-delay 0.01)
-  (setq neo-vc-integration nil)
-
   (autoload 'coffee-mode "coffee-mode"
     "Major mode for editing Coffeescript files" t)
   (add-to-list 'auto-mode-alist '("\\.cjsx\\'" . coffee-mode))
-
-  (setq persp-auto-save-persps-to-their-file nil)
 
   (setq-default
     standard-indent 2
@@ -279,7 +277,8 @@ layers configuration. You are free to put any user code."
     web-mode-markup-indent-offset 2
     web-mode-css-indent-offset 2
     web-mode-code-indent-offset 2
-    web-mode-indent-style 2)
+    web-mode-indent-style 2
+    setq yaml-indent-offset 2)
 
   (require 'seeing-is-believing)
   (add-hook 'ruby-mode-hook 'seeing-is-believing)
