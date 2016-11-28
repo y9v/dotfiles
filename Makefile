@@ -20,6 +20,8 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm ~/.rubocop.yml
 	- ln -s ~/dotfiles/dotfiles/.rubocop.yml ~/.rubocop.yml
+	- rm ~/.asdfrc
+	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
 	- mkdir -p ~/.oh-my-zsh/themes
 	- rm ~/.oh-my-zsh/themes/ylebedev.zsh-theme
 	- ln -s ~/dotfiles/dotfiles/.oh-my-zsh/themes/ylebedev.zsh-theme ~/.oh-my-zsh/themes/ylebedev.zsh-theme
