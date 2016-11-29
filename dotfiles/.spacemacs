@@ -19,7 +19,6 @@ values."
    dotspacemacs-configuration-layers
    '(
      sql
-     osx
      git
      github
      ruby-on-rails
@@ -113,7 +112,6 @@ values."
                                :powerline-scale 1.2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
-   osx-use-option-as-meta nil
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
    dotspacemacs-emacs-leader-key "M-m"
@@ -278,10 +276,21 @@ layers configuration. You are free to put any user code."
     web-mode-css-indent-offset 2
     web-mode-code-indent-offset 2
     web-mode-indent-style 2
-    setq yaml-indent-offset 2)
+    yaml-indent-offset 2)
 
   (require 'seeing-is-believing)
   (add-hook 'ruby-mode-hook 'seeing-is-believing)
+
+  (define-key evil-normal-state-map (kbd "C-M-S-s-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "C-M-S-s-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "C-M-S-s-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "C-M-S-s-l") 'evil-window-right)
+
+  (define-key evil-normal-state-map (kbd "C-M-S-s-f") 'helm-projectile-find-file)
+  (define-key evil-normal-state-map (kbd "C-M-S-s-t") 'neotree-find-project-root)
+
+  (define-key evil-normal-state-map (kbd "C-M-S-s-c") 'seeing-is-believing-mark-current-line-for-xmpfilter)
+  (define-key evil-normal-state-map (kbd "C-M-S-s-x") 'seeing-is-believing-run-as-xmpfilter)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
