@@ -10,6 +10,7 @@
 
 [core]
   editor = vim
+	excludesfile = ~/.gitignore
 
 [help]
   # Automatically correct and execute mistyped commands
