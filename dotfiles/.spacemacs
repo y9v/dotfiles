@@ -252,13 +252,13 @@ layers configuration. You are free to put any user code."
   (setq dotspacemacs-which-key-delay 0.01)
   (setq neo-vc-integration nil)
   (setq persp-auto-save-persps-to-their-file nil)
+  (setq dotspacemacs-helm-use-fuzzy 'source)
+  (setq create-lockfiles nil)
 
   (setq mac-command-key-is-meta nil)
   (setq mac-option-key-is-meta t)
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
-
-  (setq backup-directory-alist `(("." . "~/.spacemacs-temp")))
 
   (setq deft-extensions '("md"))
   (setq deft-directory "~/iCloud/Notes")
