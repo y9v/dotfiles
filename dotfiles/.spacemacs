@@ -288,15 +288,21 @@ layers configuration. You are free to put any user code."
   (add-hook 'ruby-mode-hook 'seeing-is-believing)
 
   (define-key evil-normal-state-map (kbd "C-M-S-s-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "H-h") 'evil-window-left)
   (define-key evil-normal-state-map (kbd "C-M-S-s-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "H-j") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "C-M-S-s-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "H-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-M-S-s-l") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "H-l") 'evil-window-right)
 
   (define-key evil-normal-state-map (kbd "C-M-S-s-f") 'helm-projectile-find-file)
+  (define-key evil-normal-state-map (kbd "H-f") 'helm-projectile-find-file)
   (define-key evil-normal-state-map (kbd "C-M-S-s-t") 'neotree-find-project-root)
+  (define-key evil-normal-state-map (kbd "H-t") 'neotree-find-project-root)
 
-  (define-key evil-normal-state-map (kbd "C-M-S-s-c") 'seeing-is-believing-mark-current-line-for-xmpfilter)
   (define-key evil-normal-state-map (kbd "C-M-S-s-x") 'seeing-is-believing-run-as-xmpfilter)
+  (define-key evil-normal-state-map (kbd "H-x") 'seeing-is-believing-run-as-xmpfilter)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
