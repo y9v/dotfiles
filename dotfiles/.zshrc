@@ -38,6 +38,7 @@ alias update_ctags="ctags -R -f .tags ."
 
 # Other aliases
 alias mux="tmuxinator"
+alias selfctrl="sudo sed -i -e '/[[:<:]]org.eyebeam[[:>:]]/ s/^/# /' /etc/pf.conf && sudo pfctl -f /etc/pf.conf"
 
 # Make folder and go to it
 mkcd() { mkdir -p "$1" && cd "$1" }
