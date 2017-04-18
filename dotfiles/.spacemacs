@@ -32,6 +32,7 @@ values."
      javascript
      react
      typescript
+     docker
      html
      auto-completion
      themes-megapack

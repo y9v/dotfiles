@@ -78,3 +78,6 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# Docker machine
+eval $(docker-machine env default)
