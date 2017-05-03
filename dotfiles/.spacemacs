@@ -305,6 +305,10 @@ layers configuration. You are free to put any user code."
 
   (define-key evil-normal-state-map (kbd "C-M-S-s-x") 'seeing-is-believing-run-as-xmpfilter)
   (define-key evil-normal-state-map (kbd "H-x") 'seeing-is-believing-run-as-xmpfilter)
+
+  (add-hook 'ess-mode-hook
+    (lambda ()
+      (ess-toggle-underscore nil)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
