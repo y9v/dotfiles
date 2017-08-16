@@ -18,6 +18,8 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     csv
+     ansible
      elixir
      rust
      sql
@@ -256,6 +258,8 @@ layers configuration. You are free to put any user code."
   (setq persp-auto-save-persps-to-their-file nil)
   (setq dotspacemacs-helm-use-fuzzy 'source)
   (setq create-lockfiles nil)
+  (setq require-final-newline t)
+  (setq mode-require-final-newline t)
 
   (setq mac-command-key-is-meta nil)
   (setq mac-option-key-is-meta t)

@@ -18,8 +18,6 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.vimrc.after ~/.vimrc.after
 	- rm ~/.hushlogin
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
-	- rm ~/.rubocop.yml
-	- ln -s ~/dotfiles/dotfiles/.rubocop.yml ~/.rubocop.yml
 	- rm ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
 	- mkdir -p ~/.oh-my-zsh/themes
