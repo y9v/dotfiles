@@ -8,6 +8,14 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+nnoremap <c-j> <c-w><c-j>
+nnoremap <c-k> <c-w><c-k>
+nnoremap <c-l> <c-w><c-l>
+nnoremap <c-h> <c-w><c-h>
+
+set splitbelow
+set splitright
+
 nmap F :FixWhitespace<CR>
 nmap q<CR> :tabclose<CR>
 map r :redo<CR>
