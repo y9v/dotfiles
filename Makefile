@@ -1,5 +1,4 @@
 bootstrap:
-	- brew bundle
 	- rm ~/.zshrc
 	- ln -s ~/dotfiles/dotfiles/.zshrc ~/.zshrc
 	- rm ~/.gitconfig
@@ -10,12 +9,8 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.gitmessage ~/.gitmessage
 	- rm ~/.tmux.conf
 	- ln -s ~/dotfiles/dotfiles/.tmux.conf ~/.tmux.conf
-	- rm ~/.spacemacs
-	- ln -s ~/dotfiles/dotfiles/.spacemacs ~/.spacemacs
-	- rm ~/.vimrc.before
-	- ln -s ~/dotfiles/dotfiles/.vimrc.before ~/.vimrc.before
-	- rm ~/.vimrc.after
-	- ln -s ~/dotfiles/dotfiles/.vimrc.after ~/.vimrc.after
+	- rm ~/.config/nvim/init.vim
+	- ln -s ~/dotfiles/dotfiles/nviminit.vim ~/.config/nvim/init.vim
 	- rm ~/.hushlogin
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm ~/.asdfrc

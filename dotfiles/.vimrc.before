@@ -1,9 +1,0 @@
-set enc=utf-8
-
-let mapleader=','
-
-let g:lightline = { 'colorscheme': 'wombat' }
-
-set fillchars=vert:\│
-set timeoutlen=500 ttimeoutlen=0
-set mouse=a
