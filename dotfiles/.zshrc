@@ -63,7 +63,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export GOPATH="$HOME/go"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$(brew --prefix qt@5.5)/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export EDITOR="vim"
 export BUNDLER_EDITOR="vim"
 export LC_ALL=en_US.UTF-8
@@ -74,6 +74,9 @@ ssh-add > /dev/null 2>&1
 
 # Go path
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Python path
+export PATH=~/anaconda/bin:$PATH
 
 # asdf
 . $HOME/.asdf/asdf.sh

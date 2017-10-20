@@ -290,6 +290,8 @@ layers configuration. You are free to put any user code."
     web-mode-indent-style 2
     yaml-indent-offset 2)
 
+  (require 'helm-bookmark)
+
   (require 'seeing-is-believing)
   (add-hook 'ruby-mode-hook 'seeing-is-believing)
 
