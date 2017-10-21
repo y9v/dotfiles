@@ -35,10 +35,10 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
-map <silent> <C-N> :NERDTreeToggle<CR>
-map <silent> <C-B> :CtrlPBuffer<CR>
-map <silent> <C-F> :StripWhitespace<CR>
-map <silent> <C-G> :GitGutterToggle<CR>
+nmap <silent> <C-N> :NERDTreeToggle<CR>
+nmap <silent> <C-B> :CtrlPBuffer<CR>
+nmap <silent> <C-F> :StripWhitespace<CR>
+nmap <silent> <C-G> :GitGutterToggle<CR>
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
