@@ -4,10 +4,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-repeat'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
 call plug#end()
@@ -34,6 +36,7 @@ let mapleader=',' " Remap the leader key
 " Additional mappings
 "
 map <silent> <C-N> :NERDTreeToggle<CR>
+map <silent> <C-B> :CtrlPBuffer<CR>
 map <silent> <C-F> :StripWhitespace<CR>
 map <silent> <C-G> :GitGutterToggle<CR>
 
