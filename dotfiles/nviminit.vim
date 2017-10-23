@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
@@ -94,3 +95,10 @@ endif
 " Gitgutter configuration
 "
 let g:gitgutter_enabled=0
+
+"
+" Ack-vim configuration
+"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
