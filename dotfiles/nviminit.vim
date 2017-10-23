@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-repeat'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
 call plug#end()
@@ -37,19 +38,19 @@ let mapleader=',' " Remap the leader key
 "
 nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-B> :CtrlPBuffer<CR>
-nmap <silent> <C-F> :StripWhitespace<CR>
-nmap <silent> <C-G> :GitGutterToggle<CR>
+nmap <silent> <Leader>f :StripWhitespace<CR>
+nmap <silent> <Leader>g :GitGutterToggle<CR>
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+" Use <Leader>l to clear the highlighting of :set hlsearch.
+if maparg('<Leader>l', 'n') ==# ''
+  nnoremap <Leader>l :nohlsearch<CR>
 endif
 
-"
-" Disable or enable things
-"
-let g:gitgutter_enabled=0
-let NERDTreeShowHidden=1
+nnoremap <Leader>t <C-W><S-T>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "
 " Configuration
@@ -78,3 +79,18 @@ let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_max_depth=40
 let g:ctrlp_use_caching=0
+
+"
+" NERDTree configuration
+"
+let NERDTreeShowHidden=1
+
+" Project specific bookmarks
+if isdirectory(expand(".git"))
+  let g:NERDTreeBookmarksFile = '.git/.nerdtree-bookmarks'
+endif
+
+"
+" Gitgutter configuration
+"
+let g:gitgutter_enabled=0
