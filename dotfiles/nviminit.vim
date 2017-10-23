@@ -37,7 +37,6 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
-nmap <silent> <C-N> :NERDTreeToggle<CR>
 nmap <silent> <C-B> :CtrlPBuffer<CR>
 nmap <silent> <Leader>f :StripWhitespace<CR>
 nmap <silent> <Leader>g :GitGutterToggle<CR>
@@ -85,11 +84,22 @@ let g:ctrlp_use_caching=0
 " NERDTree configuration
 "
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
 
 " Project specific bookmarks
 if isdirectory(expand(".git"))
   let g:NERDTreeBookmarksFile = '.git/.nerdtree-bookmarks'
 endif
+
+function MyNerdToggle()
+  if &filetype == 'nerdtree'
+    :NERDTreeToggle
+  else
+    :NERDTreeFind
+  endif
+endfunction
+
+nnoremap <silent> <C-N> :call MyNerdToggle()<CR>
 
 "
 " Gitgutter configuration
