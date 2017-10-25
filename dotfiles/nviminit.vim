@@ -37,7 +37,7 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
-nmap <silent> <C-B> :CtrlPBuffer<CR>
+nmap <silent> <C-O> :CtrlPBuffer<CR>
 nmap <silent> <Leader>f :StripWhitespace<CR>
 nmap <silent> <Leader>g :GitGutterToggle<CR>
 
