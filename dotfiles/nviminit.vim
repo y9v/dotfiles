@@ -14,6 +14,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "
@@ -24,10 +25,12 @@ if (has("termguicolors"))
 endif
 
 syntax on
-let g:oceanic_next_terminal_bold=1
-let g:oceanic_next_terminal_italic=1
-colorscheme OceanicNext
-let g:lightline = { 'colorscheme': 'oceanicnext' }
+" let g:oceanic_next_terminal_bold=1
+" let g:oceanic_next_terminal_italic=1
+let g:nord_italic_comments = 1
+let g:nord_uniform_diff_background = 1
+colorscheme nord
+let g:lightline = { 'colorscheme': 'nord' }
 
 "
 " Leader key
@@ -70,7 +73,7 @@ set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters
 
 " Don't show ~ for blank lines
-hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 "
 " CtrlP Configuration
