@@ -31880,9 +31880,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2410 246 620 392 1440 -540 2560 1440 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1440 900 </string>
+	<string>2070 -227 606 469 1440 -540 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>355 490 918 381 0 0 1440 900 </string>
+	<string>2412 317 937 512 1440 -540 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>40 5 1105 797 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -31907,13 +31907,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.189666748046875</real>
+				<real>0.242950439453125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15315197564809629</real>
+				<real>0.19629350344495933</real>
 				<key>Red Component</key>
-				<real>0.1371767302043736</real>
+				<real>0.17588105238974094</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -32117,13 +32117,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.1541748046875</real>
+				<real>0.18914794921875</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12515876384853333</real>
+				<real>0.15466202373206359</real>
 				<key>Red Component</key>
-				<real>0.11065081693232059</real>
+				<real>0.13741914834827185</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -32620,7 +32620,7 @@
 			<key>Transparency</key>
 			<real>0.16652413091715978</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -32705,7 +32705,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-25T07:28:04Z</date>
+	<date>2017-11-01T12:15:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
