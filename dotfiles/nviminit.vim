@@ -5,10 +5,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-tmux-navigator'
@@ -40,9 +42,10 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
-nmap <silent> <C-O> :CtrlPBuffer<CR>
-nmap <silent> <Leader>f :StripWhitespace<CR>
-nmap <silent> <Leader>g :GitGutterToggle<CR>
+nnoremap <silent> <C-O> :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>u :GundoToggle<CR>
+nnoremap <silent> <Leader>f :StripWhitespace<CR>
+nnoremap <silent> <Leader>g :GitGutterToggle<CR>
 
 " Use <Leader>l to clear the highlighting of :set hlsearch.
 if maparg('<Leader>l', 'n') ==# ''
