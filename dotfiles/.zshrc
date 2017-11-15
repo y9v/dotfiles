@@ -36,7 +36,7 @@ mkcd() { mkdir -p "$1" && cd "$1" }
 HIST_STAMPS="dd.mm.yyyy"
 
 # Zsh plugins
-plugins=(git tmux bundler brew gem ruby rails vi-mode)
+plugins=(git tmux brew gem cargo vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
