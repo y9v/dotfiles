@@ -6,10 +6,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim'
+Plug 'janko-m/vim-test'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
@@ -118,3 +120,11 @@ let g:gitgutter_enabled=0
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+"
+" Vim test configuration
+"
+map <silent> <C-t>n :TestNearest<CR>
+map <silent> <C-t>f :TestFile<CR>
+map <silent> <C-t>s :TestSuite<CR>
+map <silent> <C-t>l :TestLast<CR>
