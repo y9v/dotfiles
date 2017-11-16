@@ -4,7 +4,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'mileszs/ack.vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-commentary'
@@ -81,6 +81,11 @@ set smartcase           " ... unless the query has capital letters
 " hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 "
+" RipGrep configuration
+"
+let g:rg_highlight=1
+
+"
 " CtrlP Configuration
 "
 let g:ctrlp_working_path_mode='ra'
@@ -113,13 +118,6 @@ nnoremap <silent> <C-N> :call MyNerdToggle()<CR>
 " Gitgutter configuration
 "
 let g:gitgutter_enabled=0
-
-"
-" Ack-vim configuration
-"
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 "
 " Vim test configuration
