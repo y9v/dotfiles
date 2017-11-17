@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export HIST_STAMPS="dd.mm.yyyy"
-export PATH="$HOME/.rbenv/bin:/usr/local/opt/qt@5.5/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export EDITOR="nvim"
 export BUNDLER_EDITOR="nvim"
 export LC_ALL=en_US.UTF-8
