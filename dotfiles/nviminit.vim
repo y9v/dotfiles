@@ -7,6 +7,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
 Plug 'janko-m/vim-test'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -47,7 +48,8 @@ let mapleader=',' " Remap the leader key
 nnoremap <silent> <C-O> :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <Leader>f :StripWhitespace<CR>
-nnoremap <silent> <Leader>g :GitGutterToggle<CR>
+nnoremap <silent> <C-g>t :GitGutterToggle<CR>
+nnoremap <silent> <C-g>b :Gblame<CR>
 
 " Use <Leader>l to clear the highlighting of :set hlsearch.
 if maparg('<Leader>l', 'n') ==# ''
