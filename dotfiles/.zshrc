@@ -25,7 +25,7 @@ alias mux="tmuxinator"
 mkcd() { mkdir -p "$1" && cd "$1" }
 
 # Zsh plugins
-plugins=(git tmux gem cargo vi-mode)
+plugins=(git tmux gem cargo)
 
 source $ZSH/oh-my-zsh.sh
 
