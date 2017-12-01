@@ -45,6 +45,7 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
+inoremap jj <Esc>
 nnoremap <silent> <C-O> :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <Leader>f :StripWhitespace<CR>
