@@ -15,6 +15,8 @@ bootstrat:
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
+	- rm ~/.default-gems
+	- ln -s ~/dotfiles/.default-gems ~/.default-gems
 	- mkdir -p ~/.oh-my-zsh/themes
 	- rm ~/.oh-my-zsh/themes/ylebedev.zsh-theme
 	- ln -s ~/dotfiles/dotfiles/.oh-my-zsh/themes/ylebedev.zsh-theme ~/.oh-my-zsh/themes/ylebedev.zsh-theme
