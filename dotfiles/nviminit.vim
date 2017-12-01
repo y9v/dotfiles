@@ -130,3 +130,8 @@ map <silent> <C-t>n :TestNearest<CR>
 map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
 map <silent> <C-t>l :TestLast<CR>
+
+"
+" Ale configuration
+"
+let g:ale_echo_msg_format = '[%linter%] %s'
