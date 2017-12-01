@@ -1,4 +1,8 @@
 bundler
+rubocop
+reek
+brakeman
+rails_best_practices
 pry
 tmuxinator
 neovim
