@@ -44,19 +44,41 @@ let g:lightline = {
     \ 'colorscheme': 'nord',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'filename', 'modified', 'readonly', 'gitbranch' ] ]
+    \             [ 'filename', 'readonly', 'gitbranch' ] ]
     \ },
     \ 'component_function': {
-    \   'gitbranch': 'LightlineGitBranch'
+    \   'filename': 'LightlineFilename',
+    \   'gitbranch': 'LightlineGitBranch',
+    \   'readonly': 'LightlineReadOnly',
+    \   'fileformat': 'LightlineFileformat',
+    \   'filetype': 'LightlineFiletype',
     \ },
   \ }
 
+function! LightlineFilename()
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified
+endfunction
+
 function! LightlineGitBranch()
-  if !exists('b:git_dir')
+  if !exists('b:git_dir') || winwidth(0) <= 70
     return ''
   endif
 
   return "\ue0a0 ".fugitive#head(7)
+endfunction
+
+function! LightlineReadOnly()
+  return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? "\ue0a2" : ''
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
 "
