@@ -36,7 +36,28 @@ syntax on
 let g:nord_italic_comments = 1
 let g:nord_uniform_diff_background = 1
 colorscheme nord
-let g:lightline = { 'colorscheme': 'nord' }
+
+"
+" Lightline
+"
+let g:lightline = {
+    \ 'colorscheme': 'nord',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'filename', 'modified', 'readonly', 'gitbranch' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'LightlineGitBranch'
+    \ },
+  \ }
+
+function! LightlineGitBranch()
+  if !exists('b:git_dir')
+    return ''
+  endif
+
+  return "\ue0a0 ".fugitive#head(7)
+endfunction
 
 "
 " Leader key
