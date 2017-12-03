@@ -7,7 +7,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
 Plug 'janko-m/vim-test'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -174,3 +173,5 @@ map <silent> <C-t>l :TestLast<CR>
 " Ale configuration
 "
 let g:ale_echo_msg_format = '[%linter%] %s'
+let g:lightline#ale#indicator_errors = "\u2716"
+let g:lightline#ale#indicator_warnings = "\u26A0"
