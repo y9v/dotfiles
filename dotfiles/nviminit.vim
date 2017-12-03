@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
+Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -21,6 +22,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tyrannicaltoucan/vim-quantum'
 call plug#end()
 
 "
@@ -33,25 +35,31 @@ endif
 syntax on
 " let g:oceanic_next_terminal_bold=1
 " let g:oceanic_next_terminal_italic=1
-let g:nord_italic_comments = 1
-let g:nord_uniform_diff_background = 1
-colorscheme nord
+" let g:nord_italic_comments = 1
+" let g:nord_uniform_diff_background = 1
+let g:quantum_black=1
+let g:quantum_italics=1
+colorscheme quantum
 
 "
 " Lightline
 "
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'quantum',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'filename', 'readonly', 'gitbranch' ] ]
+    \   'left': [['mode', 'paste'], ['filename', 'readonly']],
+    \   'right': [['lineinfo'], ['linter_errors', 'linter_warnings'], ['filetype']],
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
-    \   'gitbranch': 'LightlineGitBranch',
     \   'readonly': 'LightlineReadOnly',
-    \   'fileformat': 'LightlineFileformat',
     \   'filetype': 'LightlineFiletype',
+    \   'linter_warnings': 'lightline#ale#warnings',
+    \   'linter_errors': 'lightline#ale#errors',
+    \ },
+    \ 'component_type': {
+    \   'linter_warnings': 'warning',
+    \   'linter_errors': 'error',
     \ },
   \ }
 
@@ -61,20 +69,8 @@ function! LightlineFilename()
   return filename . modified
 endfunction
 
-function! LightlineGitBranch()
-  if !exists('b:git_dir') || winwidth(0) <= 70
-    return ''
-  endif
-
-  return "\ue0a0 ".fugitive#head(7)
-endfunction
-
 function! LightlineReadOnly()
   return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? "\ue0a2" : ''
-endfunction
-
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
