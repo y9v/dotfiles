@@ -173,5 +173,6 @@ map <silent> <C-t>l :TestLast<CR>
 " Ale configuration
 "
 let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_lint_on_text_changed = 'never'
 let g:lightline#ale#indicator_errors = "\u2716"
 let g:lightline#ale#indicator_warnings = "\u26A0"
