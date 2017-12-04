@@ -48,3 +48,6 @@ export PATH=~/anaconda/bin:$PATH
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# Tmuxinator completion
+source ~/dotfiles/dotfiles/zsh/tmuxinator_completion.zsh
