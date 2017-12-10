@@ -93,6 +93,9 @@ nnoremap <silent> <Leader>f :StripWhitespace<CR>
 nnoremap <silent> <C-g>c :GitGutterToggle<CR>
 nnoremap <silent> <C-g>b :Gblame<CR>
 
+" Use Esc to exit terminal-mode.
+tnoremap <Esc> <C-\><C-n>
+
 " Use <Leader>l to clear the highlighting of :set hlsearch.
 if maparg('<Leader>l', 'n') ==# ''
   nnoremap <Leader>l :nohlsearch<CR>
