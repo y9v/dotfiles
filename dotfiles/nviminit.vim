@@ -2,7 +2,8 @@
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
@@ -87,11 +88,21 @@ let mapleader=',' " Remap the leader key
 " Additional mappings
 "
 inoremap jj <Esc>
-nnoremap <silent> <C-O> :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <Leader>f :StripWhitespace<CR>
 nnoremap <silent> <C-g>c :GitGutterToggle<CR>
 nnoremap <silent> <C-g>b :Gblame<CR>
+
+"
+" FZF
+"
+map <silent> <C-p>f :GFiles<CR>
+map <silent> <C-p>b :Buffers<CR>
+map <silent> <C-p>s :GFiles?<CR>
+map <silent> <C-p>t :Tags<CR>
+map <silent> <C-p>m :Marks<CR>
+map <silent> <C-p>h :History<CR>
+map <silent> <C-p>c :BCommits<CR>
 
 " Use Esc to exit terminal-mode.
 tnoremap <Esc> <C-\><C-n>
@@ -131,14 +142,6 @@ set smartcase           " ... unless the query has capital letters
 " RipGrep configuration
 "
 let g:rg_highlight=1
-
-"
-" CtrlP Configuration
-"
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_max_depth=40
-let g:ctrlp_use_caching=0
 
 "
 " NERDTree configuration
