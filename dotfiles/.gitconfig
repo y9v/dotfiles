@@ -1,6 +1,6 @@
 [user]
   name = Yury Lebedev
-  email = lebedev.yurii@gmail.com
+  email = yury.lebedev@daimler.com
 
 [credential]
   helper = osxkeychain

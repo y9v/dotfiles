@@ -1,6 +1,4 @@
-bootstrat:
-	- rm ~/.zshrc
-	- ln -s ~/dotfiles/dotfiles/.zshrc ~/.zshrc
+bootstrap:
 	- rm ~/.gitconfig
 	- ln -s ~/dotfiles/dotfiles/.gitconfig ~/.gitconfig
 	- rm ~/.gitignore
@@ -19,6 +17,11 @@ bootstrat:
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
 	- rm ~/.reek
 	- ln -s ~/dotfiles/dotfiles/.reek ~/.reek
-	- mkdir -p ~/.oh-my-zsh/themes
-	- rm ~/.oh-my-zsh/themes/ylebedev.zsh-theme
-	- ln -s ~/dotfiles/dotfiles/.oh-my-zsh/themes/ylebedev.zsh-theme ~/.oh-my-zsh/themes/ylebedev.zsh-theme
+	- rm ~/.config/fish/aliases.fish
+	- ln -s ~/dotfiles/dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
+	- rm ~/.config/fish/user_functions.fish
+	- ln -s ~/dotfiles/dotfiles/fish/user_functions.fish ~/.config/fish/user_functions.fish
+	- rm ~/.config/fish/variables.fish
+	- ln -s ~/dotfiles/dotfiles/fish/variables.fish ~/.config/fish/variables.fish
+	- rm ~/.config/fish/config.fish
+	- ln -s ~/dotfiles/dotfiles/fish/config.fish ~/.config/fish/config.fish
