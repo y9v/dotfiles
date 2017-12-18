@@ -24,6 +24,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 "
@@ -41,7 +42,8 @@ set nolazyredraw
 " let g:nord_uniform_diff_background = 1
 let g:quantum_black=1
 let g:quantum_italics=1
-colorscheme quantum
+set background=dark
+colorscheme PaperColor
 
 "
 " Lightline
