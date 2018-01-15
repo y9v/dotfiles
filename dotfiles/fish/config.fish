@@ -5,6 +5,8 @@ source ~/.config/fish/user_functions.fish
 set fish_greeting ""
 
 function fish_mode_prompt; end
+function fish_vi_cursor; end
+
 fish_vi_key_bindings
 
 source ~/.asdf/asdf.fish

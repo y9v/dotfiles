@@ -9,4 +9,6 @@ set -Ux LC_ALL en_US.UTF-8
 set -Ux LANG en_US.UTF-8
 
 set -Ux GOPATH $HOME/go
-set -Ux PATH $PATH $GOPATH/bin
+set -gx PATH $PATH $GOPATH/bin
+
+set -gx PATH $HOME/miniconda3/bin $PATH
