@@ -87,6 +87,21 @@ endfunction
 let mapleader=',' " Remap the leader key
 
 "
+" Basic configuration
+"
+set hidden
+set history=10000
+set expandtab
+set showmatch
+set incsearch
+set hlsearch
+set ignorecase smartcase
+set nobackup
+set nowritebackup
+set nojoinspaces
+set autoread
+
+"
 " Additional mappings
 "
 inoremap jj <Esc>
