@@ -189,6 +189,13 @@ let g:gitgutter_enabled=0
 "
 " Vim test configuration
 "
+function! DockerComposeTransformation(cmd) abort
+  return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
+endfunction
+
+let g:test#custom_transformations = {'docker-compose': function('DockerComposeTransformation')}
+command! -bar DockerComposeEnv let g:test#transformation = 'docker-compose'
+
 map <silent> <C-t>n :TestNearest<CR>
 map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
