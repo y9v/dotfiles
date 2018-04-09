@@ -25,6 +25,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 "
@@ -40,16 +41,18 @@ set nolazyredraw
 " let g:oceanic_next_terminal_italic=1
 " let g:nord_italic_comments = 1
 " let g:nord_uniform_diff_background = 1
-let g:quantum_black=1
-let g:quantum_italics=1
+" let g:quantum_black=1
+" let g:quantum_italics=1
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
 set background=dark
-colorscheme PaperColor
+colorscheme gruvbox
 
 "
 " Lightline
 "
 let g:lightline = {
-    \ 'colorscheme': 'quantum',
+    \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'readonly']],
     \   'right': [['lineinfo'], ['linter_errors', 'linter_warnings'], ['filetype']],
