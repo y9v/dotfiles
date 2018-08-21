@@ -10,3 +10,5 @@ set -Ux LANG en_US.UTF-8
 
 set -Ux GOPATH $HOME/go
 set -gx PATH $PATH $GOPATH/bin
+
+set -gx PATH $PATH $HOME/.cargo/bin

@@ -21,12 +21,16 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 call plug#end()
+
+set encoding=UTF-8
 
 "
 " GUI colors and theming
@@ -43,16 +47,17 @@ set nolazyredraw
 " let g:nord_uniform_diff_background = 1
 " let g:quantum_black=1
 " let g:quantum_italics=1
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
+" let g:gruvbox_bold=1
+" let g:gruvbox_italic=1
+let g:one_allow_italics = 1
 set background=dark
-colorscheme gruvbox
+colorscheme one
 
 "
 " Lightline
 "
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'readonly']],
     \   'right': [['lineinfo'], ['linter_errors', 'linter_warnings'], ['filetype']],
@@ -77,7 +82,7 @@ function! LightlineFilename()
 endfunction
 
 function! LightlineReadOnly()
-  return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? "\ue0a2" : ''
+  return &readonly && &filetype !~# '\v(help|vimfiler|unite)' ? "\uf023" : ''
 endfunction
 
 function! LightlineFiletype()
@@ -209,5 +214,38 @@ map <silent> <C-t>l :TestLast<CR>
 "
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_lint_on_text_changed = 'never'
-let g:lightline#ale#indicator_errors = "\u2716"
-let g:lightline#ale#indicator_warnings = "\u26A0"
+let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_warnings = "\ue3c6 "
+
+"
+" Webdev icons
+"
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = "\ue73e"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['rb'] = "\ue791"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ru'] = "\ue791"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['sh'] = "\uf489"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = "\uf13c"
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = "\uf13b"
+
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitlab-ci.yml'] = "\uf296"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = "\ue725"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.dockerignore'] = "\ue7b0"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.keep'] = "\ue725"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitkeep'] = "\ue725"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.brakeman.ignore'] = "\ufb88"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['schema.rb'] = "\uf472"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['secrets.yml'] = "\uf21b"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmrc'] = "\ue71e"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package.json'] = "\ue71e"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['package-lock.json'] = "\ue71e"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.eslintignore'] = "\ue60c"
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.eslintrc.js'] = "\ue60c"
+
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Gemfile'] = "\ue791"
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Rakefile'] = "\ue791"
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack'] = "\ufc29"
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['vue'] = "\ufd42"
