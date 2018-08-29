@@ -27,3 +27,5 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/fish/config.fish ~/.config/fish/config.fish
 	- rm ~/.gnupg/gpg.conf
 	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
+	- rm ~/.gnupg/gpg-agent.conf
+	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
