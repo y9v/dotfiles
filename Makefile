@@ -25,3 +25,5 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/fish/variables.fish ~/.config/fish/variables.fish
 	- rm ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/dotfiles/fish/config.fish ~/.config/fish/config.fish
+	- rm ~/.gnupg/gpg.conf
+	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
