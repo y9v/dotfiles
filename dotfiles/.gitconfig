@@ -1,6 +1,7 @@
 [user]
   name = Yury Lebedev
-  email = yury.lebedev@daimler.com
+  email = lebedev.yurii@gmail.com
+	signingkey = 0xF76D2629DADC18B6
 
 [credential]
   helper = osxkeychain

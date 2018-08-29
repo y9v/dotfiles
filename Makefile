@@ -29,3 +29,7 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
 	- rm ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+	- rm ~/.sleep
+	- ln -s ~/dotfiles/dotfiles/sleep ~/.sleep
+	- rm ~/.wakeup
+	- ln -s ~/dotfiles/dotfiles/wakeup ~/.wakeup
