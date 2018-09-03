@@ -1,6 +1,7 @@
 set -Ux HIST_STAMPS "dd.mm.yyyy"
 
 set -Ux PATH $HOME /usr/local/bin /usr/bin /bin /usr/sbin /sbin $PATH
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 set -Ux EDITOR nvim
 set -Ux BUNDLER_EDITOR nvim
