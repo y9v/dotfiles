@@ -18,3 +18,8 @@ end
 function fnvim -d "Fuzzy-find file and open in nvim"
   fzf | xargs nvim
 end
+
+function kubectlenv
+  eval (ibmcloud cs cluster-config pricing-$argv | grep export)
+  echo "kubectl is configured for pricing-$argv"
+end
