@@ -9,6 +9,8 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.tmux.conf ~/.tmux.conf
 	- rm ~/.config/nvim/init.vim
 	- ln -s ~/dotfiles/dotfiles/nviminit.vim ~/.config/nvim/init.vim
+	- rm ~/.vimrc
+	- ln -s ~/dotfiles/dotfiles/nviminit.vim ~/.vimrc
 	- rm ~/.hushlogin
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm ~/.asdfrc

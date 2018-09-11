@@ -23,7 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
-Plug '~/.vim/plugged/snow'
+Plug 'nightsense/snow'
 call plug#end()
 
 set encoding=UTF-8
@@ -39,6 +39,9 @@ syntax on
 set nolazyredraw
 let g:oceanic_next_terminal_bold=1
 let g:oceanic_next_terminal_italic=1
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 "
 " Lightline
@@ -61,6 +64,8 @@ let g:lightline = {
     \ },
     \ 'separator': { 'left': '', 'right': '' },
   \ }
+
+set laststatus=2
 
 function! LightlineFilename()
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
