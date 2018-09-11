@@ -175,6 +175,8 @@ set splitright          " Vertical split to right of current.
 set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters
 
+set noswapfile
+
 " Don't show ~ for blank lines
 " hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
