@@ -23,11 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
-Plug 'arcticicestudio/nord-vim'
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
+Plug '~/.vim/plugged/snow'
 call plug#end()
 
 set encoding=UTF-8
@@ -41,23 +37,13 @@ endif
 
 syntax on
 set nolazyredraw
-" let g:oceanic_next_terminal_bold=1
-" let g:oceanic_next_terminal_italic=1
-" let g:nord_italic_comments = 1
-" let g:nord_uniform_diff_background = 1
-" let g:quantum_black=1
-" let g:quantum_italics=1
-" let g:gruvbox_bold=1
-" let g:gruvbox_italic=1
-let g:one_allow_italics = 1
-set background=dark
-colorscheme one
+let g:oceanic_next_terminal_bold=1
+let g:oceanic_next_terminal_italic=1
 
 "
 " Lightline
 "
 let g:lightline = {
-    \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'readonly']],
     \   'right': [['lineinfo'], ['linter_errors', 'linter_warnings'], ['filetype']],
@@ -73,6 +59,7 @@ let g:lightline = {
     \   'linter_warnings': 'warning',
     \   'linter_errors': 'error',
     \ },
+    \ 'separator': { 'left': '', 'right': '' },
   \ }
 
 function! LightlineFilename()
@@ -89,6 +76,29 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
+"
+" Theme switching
+"
+function LightTheme()
+  set background=light
+  colorscheme snow
+  let g:lightline = { 'colorscheme': 'snow_light' }
+  call lightline#init()
+  call lightline#update()
+endfunction
+
+function DarkTheme()
+  set background=dark
+  colorscheme OceanicNext
+  let g:lightline = { 'colorscheme': 'oceanicnext' }
+  call lightline#init()
+  call lightline#update()
+endfunction
+
+call DarkTheme()
+
+command! -bar Light call LightTheme()
+command! -bar Dark call DarkTheme()
 "
 " Leader key
 "
