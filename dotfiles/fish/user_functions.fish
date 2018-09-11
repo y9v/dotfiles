@@ -3,11 +3,11 @@ function mkcd
   cd $argv
 end
 
-function fzfbranch -d "Fuzzy-find and checkout a local git branch"
+function fbranch -d "Fuzzy-find and checkout a local git branch"
   git branch | grep -v HEAD | string trim | fzf | read -l result; git checkout "$result"
 end
 
-function fzfcheckout -d "Fuzzy-find and checkout a remote git branch"
+function fcheckout -d "Fuzzy-find and checkout a remote git branch"
   git branch --remote | grep -v HEAD | string trim | fzf | read -l result; and git checkout -B (string replace origin/ '' $result) --track $result
 end
 
@@ -24,6 +24,10 @@ function fnvim -d "Fuzzy-find file and open in nvim"
 end
 
 function kubectlenv
-  eval (ibmcloud cs cluster-config pricing-$argv | grep export)
-  echo "kubectl is configured for pricing-$argv"
+  if set -l exportstr (ibmcloud cs cluster-config pricing-$argv | grep export)
+    eval $exportstr
+    echo "kubectl is configured for pricing-$argv"
+  else
+    echo (ibmcloud cs cluster-config pricing-$argv)
+  end
 end
