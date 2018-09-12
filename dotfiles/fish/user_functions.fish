@@ -23,11 +23,14 @@ function fnvim -d "Fuzzy-find file and open in nvim"
   fzf | xargs nvim
 end
 
-function kubectlenv
-  if set -l exportstr (ibmcloud cs cluster-config pricing-$argv | grep export)
-    eval $exportstr
-    echo "kubectl is configured for pricing-$argv"
-  else
-    echo (ibmcloud cs cluster-config pricing-$argv)
-  end
+function fcluster
+  set -l cluster (ibmcloud cs clusters -s | awk '{print $1}' | fzf)
+  set -l exportstr (ibmcloud cs cluster-config $cluster | grep export)
+
+  eval $exportstr
+  kubectl cluster-info
+end
+
+function fpod
+  kubectl get pods | fzf | awk '{print $1}'
 end
