@@ -25,10 +25,13 @@ end
 
 function fcluster
   set -l cluster (ibmcloud cs clusters -s | awk '{print $1}' | fzf)
-  set -l exportstr (ibmcloud cs cluster-config $cluster | grep export)
 
-  eval $exportstr
-  kubectl cluster-info
+  if [ $cluster ]
+    set -l exportstr (ibmcloud cs cluster-config $cluster | grep export)
+
+    eval $exportstr
+    kubectl cluster-info
+  end
 end
 
 function fpod
