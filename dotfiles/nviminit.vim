@@ -123,6 +123,8 @@ set nobackup
 set nowritebackup
 set nojoinspaces
 set autoread
+set nocompatible
+set backspace=indent,eol,start
 
 "
 " Additional mappings
