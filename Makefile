@@ -8,17 +8,15 @@ bootstrap:
 	- rm ~/.tmux.conf
 	- ln -s ~/dotfiles/dotfiles/.tmux.conf ~/.tmux.conf
 	- rm ~/.config/nvim/init.vim
-	- ln -s ~/dotfiles/dotfiles/nviminit.vim ~/.config/nvim/init.vim
+	- ln -s ~/dotfiles/dotfiles/vimrc ~/.config/nvim/init.vim
 	- rm ~/.vimrc
-	- ln -s ~/dotfiles/dotfiles/nviminit.vim ~/.vimrc
+	- ln -s ~/dotfiles/dotfiles/vimrc ~/.vimrc
 	- rm ~/.hushlogin
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
 	- rm ~/.default-gems
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
-	- rm ~/.reek
-	- ln -s ~/dotfiles/dotfiles/.reek ~/.reek
 	- rm ~/.config/fish/aliases.fish
 	- ln -s ~/dotfiles/dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
 	- rm ~/.config/fish/user_functions.fish
@@ -32,6 +30,6 @@ bootstrap:
 	- rm ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	- rm ~/.sleep
-	- ln -s ~/dotfiles/dotfiles/sleep ~/.sleep
+	- ln -s ~/dotfiles/dotfiles/bin/sleep ~/.sleep
 	- rm ~/.wakeup
-	- ln -s ~/dotfiles/dotfiles/wakeup ~/.wakeup
+	- ln -s ~/dotfiles/dotfiles/bin/wakeup ~/.wakeup
