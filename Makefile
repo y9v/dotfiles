@@ -18,6 +18,8 @@ bootstrap:
 	- rm ~/.default-gems
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
 	- rm ~/.config/fish/aliases.fish
+	- rm ~/.psqlrc
+	- ln -s ~/dotfiles/dotfiles/.psqlrc ~/.psqlrc
 	- ln -s ~/dotfiles/dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
 	- rm ~/.config/fish/user_functions.fish
 	- ln -s ~/dotfiles/dotfiles/fish/user_functions.fish ~/.config/fish/user_functions.fish
