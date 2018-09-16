@@ -1,37 +1,37 @@
 bootstrap:
-	- rm ~/.gitconfig
+	- rm -f ~/.gitconfig
 	- ln -s ~/dotfiles/dotfiles/.gitconfig ~/.gitconfig
-	- rm ~/.gitignore
+	- rm -f ~/.gitignore
 	- ln -s ~/dotfiles/dotfiles/.gitignore ~/.gitignore
-	- rm ~/.gitmessage
+	- rm -f ~/.gitmessage
 	- ln -s ~/dotfiles/dotfiles/.gitmessage ~/.gitmessage
-	- rm ~/.tmux.conf
+	- rm -f ~/.tmux.conf
 	- ln -s ~/dotfiles/dotfiles/.tmux.conf ~/.tmux.conf
-	- rm ~/.config/nvim/init.vim
+	- rm -f ~/.config/nvim/init.vim
 	- ln -s ~/dotfiles/dotfiles/vimrc ~/.config/nvim/init.vim
-	- rm ~/.vimrc
+	- rm -f ~/.vimrc
 	- ln -s ~/dotfiles/dotfiles/vimrc ~/.vimrc
-	- rm ~/.hushlogin
+	- rm -f ~/.hushlogin
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
-	- rm ~/.asdfrc
+	- rm -f ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
-	- rm ~/.default-gems
+	- rm -f ~/.default-gems
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
-	- rm ~/.config/fish/aliases.fish
-	- rm ~/.psqlrc
+	- rm -f ~/.config/fish/aliases.fish
+	- rm -f ~/.psqlrc
 	- ln -s ~/dotfiles/dotfiles/.psqlrc ~/.psqlrc
 	- ln -s ~/dotfiles/dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
-	- rm ~/.config/fish/user_functions.fish
+	- rm -f ~/.config/fish/user_functions.fish
 	- ln -s ~/dotfiles/dotfiles/fish/user_functions.fish ~/.config/fish/user_functions.fish
-	- rm ~/.config/fish/variables.fish
+	- rm -f ~/.config/fish/variables.fish
 	- ln -s ~/dotfiles/dotfiles/fish/variables.fish ~/.config/fish/variables.fish
-	- rm ~/.config/fish/config.fish
+	- rm -f ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/dotfiles/fish/config.fish ~/.config/fish/config.fish
-	- rm ~/.gnupg/gpg.conf
+	- rm -f ~/.gnupg/gpg.conf
 	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
-	- rm ~/.gnupg/gpg-agent.conf
+	- rm -f ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-	- rm ~/.sleep
+	- rm -f ~/.sleep
 	- ln -s ~/dotfiles/dotfiles/bin/sleep ~/.sleep
-	- rm ~/.wakeup
+	- rm -f ~/.wakeup
 	- ln -s ~/dotfiles/dotfiles/bin/wakeup ~/.wakeup
