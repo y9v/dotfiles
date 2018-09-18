@@ -89,7 +89,7 @@ endfunction
 function LightTheme()
   set background=light
   colorscheme snow
-  let g:lightline = { 'colorscheme': 'snow_light' }
+  let g:lightline.colorscheme = 'snow_light'
   call lightline#init()
   call lightline#update()
 endfunction
@@ -97,7 +97,7 @@ endfunction
 function DarkTheme()
   set background=dark
   colorscheme OceanicNext
-  let g:lightline = { 'colorscheme': 'oceanicnext' }
+  let g:lightline.colorscheme = 'oceanicnext'
   call lightline#init()
   call lightline#update()
 endfunction
