@@ -51,18 +51,13 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:lightline = {
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'readonly']],
-    \   'right': [['lineinfo'], ['linter_errors', 'linter_warnings'], ['filetype']],
+    \   'right': [['lineinfo'], ['linterstatus'], ['filetype']],
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
     \   'readonly': 'LightlineReadOnly',
     \   'filetype': 'LightlineFiletype',
-    \   'linter_warnings': 'lightline#ale#warnings',
-    \   'linter_errors': 'lightline#ale#errors',
-    \ },
-    \ 'component_type': {
-    \   'linter_warnings': 'warning',
-    \   'linter_errors': 'error',
+    \   'linterstatus': 'LinterStatus',
     \ },
     \ 'separator': { 'left': '', 'right': '' },
   \ }
@@ -81,6 +76,19 @@ endfunction
 
 function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '' : printf(
+  \   "\uf67c %d \uf41b %d",
+  \   all_non_errors,
+  \   all_errors
+  \)
 endfunction
 
 "
@@ -235,8 +243,9 @@ map <silent> <C-t>l :TestLast<CR>
 "
 let g:ale_echo_msg_format = '[%linter%] %s'
 let g:ale_lint_on_text_changed = 'never'
-let g:lightline#ale#indicator_errors = "\uf05e "
-let g:lightline#ale#indicator_warnings = "\ue3c6 "
+let g:ale_sign_error = "\uf41b"
+let g:ale_sign_warning = "\uf44a"
+highlight ALEWarning ctermbg=DarkMagenta ctermfg=White
 
 "
 " Webdev icons
