@@ -15,6 +15,8 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm -f ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
+	- rm -f ~/.config/alacritty/alacritty.yml
+	- ln -s ~/dotfiles/dotfiles/.alacritty.yml ~/.config/alacritty/alacritty.yml
 	- rm -f ~/.default-gems
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
 	- rm -f ~/.config/fish/aliases.fish

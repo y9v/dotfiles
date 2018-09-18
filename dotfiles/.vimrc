@@ -29,16 +29,18 @@ call plug#end()
 set encoding=UTF-8
 
 "
-" GUI colors and theming
+" General config
 "
 if (has("termguicolors"))
   set termguicolors
 endif
 
 syntax on
-set nolazyredraw
-let g:oceanic_next_terminal_bold=1
-let g:oceanic_next_terminal_italic=1
+set nocursorline
+set ttyfast
+set lazyredraw
+set noshowcmd
+set synmaxcol=200
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
