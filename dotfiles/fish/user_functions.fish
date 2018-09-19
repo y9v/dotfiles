@@ -37,3 +37,7 @@ end
 function fpod
   kubectl get pods | fzf | awk '{print $1}'
 end
+
+function fdeployment
+  kubectl get deployments | fzf | awk '{print $1}'
+end

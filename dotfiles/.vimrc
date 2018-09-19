@@ -36,10 +36,23 @@ if (has("termguicolors"))
 endif
 
 syntax on
+set nocompatible
 set nocursorline
 set ttyfast
 set lazyredraw
 set noshowcmd
+set hidden
+set expandtab
+set showmatch
+set incsearch
+set hlsearch
+set ignorecase smartcase
+set nobackup
+set nowritebackup
+set nojoinspaces
+set autoread
+set history=10000
+set backspace=indent,eol,start
 set synmaxcol=200
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -118,23 +131,6 @@ command! -bar Dark call DarkTheme()
 " Leader key
 "
 let mapleader=',' " Remap the leader key
-
-"
-" Basic configuration
-"
-set hidden
-set history=10000
-set expandtab
-set showmatch
-set incsearch
-set hlsearch
-set ignorecase smartcase
-set nobackup
-set nowritebackup
-set nojoinspaces
-set autoread
-set nocompatible
-set backspace=indent,eol,start
 
 "
 " Additional mappings
@@ -226,6 +222,8 @@ let g:gitgutter_enabled=0
 "
 " Vim test configuration
 "
+let test#strategy = 'vimterminal'
+
 function! DockerComposeTransformation(cmd) abort
   return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
 endfunction
