@@ -3,6 +3,10 @@ function mkcd
   cd $argv
 end
 
+function fattach -d "Fuzzy-find and attach to tmux session"
+  tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}'a | fzf | read -l result; tmux attach -t $result
+end
+
 function fbranch -d "Fuzzy-find and checkout a local git branch"
   git branch | grep -v HEAD | string trim | fzf | read -l result; git checkout "$result"
 end
@@ -23,7 +27,7 @@ function fnvim -d "Fuzzy-find file and open in nvim"
   fzf | xargs nvim
 end
 
-function fcluster
+function fcluster -d "Fuzzy-find and select IBM cluster"
   set -l cluster (ibmcloud cs clusters -s | awk '{print $1}' | fzf)
 
   if [ $cluster ]
@@ -34,10 +38,10 @@ function fcluster
   end
 end
 
-function fpod
+function fpod -d "Fuzzy-find and get k8s pod id"
   kubectl get pods | fzf | awk '{print $1}'
 end
 
-function fdeployment
+function fdeployment -d "Fuzzy-find and get k8s deployment id"
   kubectl get deployments | fzf | awk '{print $1}'
 end
