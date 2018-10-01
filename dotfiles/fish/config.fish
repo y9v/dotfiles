@@ -15,3 +15,6 @@ source ~/.asdf/asdf.fish
 export GPG_TTY=(tty)
 gpgconf --launch gpg-agent
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+
+export BAT_STYLE=numbers,changes
+export BAT_THEME=1337
