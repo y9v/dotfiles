@@ -277,3 +277,5 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Gemfile'] = "\ue791"
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Rakefile'] = "\ue791"
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack'] = "\ufc29"
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['vue'] = "\ufd42"
+
+runtime macros/matchit.vim
