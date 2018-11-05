@@ -13,3 +13,6 @@ set -Ux GOPATH $HOME/go
 set -gx PATH $PATH $GOPATH/bin
 
 set -gx PATH $PATH $HOME/.cargo/bin
+
+set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
