@@ -222,7 +222,7 @@ let g:gitgutter_enabled=0
 " Vim test configuration
 "
 function! TermStrategy(cmd)
-  term
+  bot term
   call term_sendkeys('', "" . a:cmd . "\r")
 endfunction
 
