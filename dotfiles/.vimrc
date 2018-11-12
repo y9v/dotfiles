@@ -135,7 +135,6 @@ let mapleader=',' " Remap the leader key
 "
 " Additional mappings
 "
-inoremap jj <Esc>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <Leader>f :StripWhitespace<CR>
 nnoremap <silent> <C-g>c :GitGutterToggle<CR>
