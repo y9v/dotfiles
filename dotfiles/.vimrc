@@ -221,7 +221,7 @@ let g:gitgutter_enabled=0
 "
 " Vim test configuration
 "
-let test#strategy = 'vimterminal'
+let test#strategy = 'neovim'
 
 function! DockerComposeTransformation(cmd) abort
   return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
