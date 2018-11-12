@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
+Plug 'benmills/vimux'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-unimpaired'
@@ -221,7 +222,7 @@ let g:gitgutter_enabled=0
 "
 " Vim test configuration
 "
-let test#strategy = 'neovim'
+let test#strategy = 'vimux'
 
 function! DockerComposeTransformation(cmd) abort
   return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
@@ -234,6 +235,11 @@ map <silent> <C-t>n :TestNearest<CR>
 map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
 map <silent> <C-t>l :TestLast<CR>
+
+"
+" Vimux configuration
+"
+let g:VimuxUseNearest = 0
 
 "
 " Ale configuration
