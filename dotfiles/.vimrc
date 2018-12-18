@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
 Plug 'janko-m/vim-test'
+Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -221,13 +222,7 @@ let g:gitgutter_enabled=0
 "
 " Vim test configuration
 "
-function! TermStrategy(cmd)
-  bot term
-  call term_sendkeys('', "" . a:cmd . "\r")
-endfunction
-
-let g:test#custom_strategies = {'term': function('TermStrategy')}
-let g:test#strategy = 'term'
+let test#strategy = "vimterminal"
 
 function! DockerComposeTransformation(cmd) abort
   return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
