@@ -25,6 +25,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
 Plug 'nightsense/snow'
+Plug 'tjammer/blayu.vim'
 call plug#end()
 
 set encoding=UTF-8
@@ -118,8 +119,8 @@ endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme OceanicNext
-  let g:lightline.colorscheme = 'oceanicnext'
+  colorscheme blayu
+  let g:lightline.colorscheme = 'blayu'
   call lightline#init()
   call lightline#update()
 endfunction
