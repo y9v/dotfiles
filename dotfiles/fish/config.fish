@@ -18,3 +18,5 @@ export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
 export BAT_STYLE=numbers,changes
 export BAT_THEME=1337
+
+set -g fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
