@@ -14,8 +14,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
-Plug 'w0rp/ale'
-Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -66,13 +64,12 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:lightline = {
     \ 'active': {
     \   'left': [['mode', 'paste'], ['filename', 'readonly']],
-    \   'right': [['lineinfo'], ['linterstatus'], ['filetype']],
+    \   'right': [['lineinfo'], ['filetype']],
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
     \   'readonly': 'LightlineReadOnly',
     \   'filetype': 'LightlineFiletype',
-    \   'linterstatus': 'LinterStatus',
     \ },
     \ 'separator': { 'left': '', 'right': '' },
   \ }
@@ -93,18 +90,6 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
-function! LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-
-  return l:counts.total == 0 ? '' : printf(
-  \   "\uf67c %d \uf41b %d",
-  \   all_non_errors,
-  \   all_errors
-  \)
-endfunction
 
 "
 " Theme switching
@@ -140,7 +125,12 @@ let mapleader=',' " Remap the leader key
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <Leader>f :StripWhitespace<CR>
 nnoremap <silent> <C-g>c :GitGutterToggle<CR>
-nnoremap <silent> <C-g>b :Gblame<CR>
+
+"
+" Fugitive
+"
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gb :Gblame<CR>
 
 "
 " FZF
@@ -236,15 +226,6 @@ map <silent> <C-t>n :TestNearest<CR>
 map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
 map <silent> <C-t>l :TestLast<CR>
-
-"
-" Ale configuration
-"
-let g:ale_echo_msg_format = '[%linter%] %s'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_error = "\uf41b"
-let g:ale_sign_warning = "\uf44a"
-highlight ALEWarning ctermbg=DarkMagenta ctermfg=White
 
 "
 " Webdev icons
