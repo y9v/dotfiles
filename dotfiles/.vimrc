@@ -18,6 +18,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
+Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -151,7 +152,8 @@ if maparg('<Leader>l', 'n') ==# ''
   nnoremap <Leader>l :nohlsearch<CR>
 endif
 
-nnoremap <Leader>t <C-W><S-T>
+nnoremap <Leader>T <C-W><S-T>
+nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>

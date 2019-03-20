@@ -10,7 +10,7 @@
   default = simple
 
 [core]
-  editor = nvim
+  editor = vim
 	excludesfile = ~/.gitignore
 
 [help]
