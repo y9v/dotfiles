@@ -9,8 +9,6 @@ function fish_vi_cursor; end
 
 fish_vi_key_bindings
 
-source ~/.asdf/asdf.fish
-
 # use gpg agent instead of ssh agent
 export GPG_TTY=(tty)
 gpgconf --launch gpg-agent

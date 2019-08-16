@@ -32,3 +32,5 @@
 	required = true
 [diff "sopsdiffer"]
 	textconv = sops -d
+[gpg]
+	program = gpg

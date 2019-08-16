@@ -34,6 +34,6 @@ bootstrap:
 	- rm -f ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	- rm -f ~/.sleep
-	- ln -s ~/dotfiles/dotfiles/bin/sleep ~/.sleep
+	- ln -s ~/dotfiles/dotfiles/bin/sleep /usr/local/bin/sleep
 	- rm -f ~/.wakeup
-	- ln -s ~/dotfiles/dotfiles/bin/wakeup ~/.wakeup
+	- ln -s ~/dotfiles/dotfiles/bin/wakeup /usr/local/bin/wakeup
