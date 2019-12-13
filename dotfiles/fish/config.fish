@@ -20,3 +20,5 @@ export BAT_THEME=1337
 set -g fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
 
 direnv hook fish | source
+
+source /usr/local/opt/asdf/asdf.fish

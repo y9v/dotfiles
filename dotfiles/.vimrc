@@ -184,7 +184,7 @@ set noswapfile
 "
 " RipGrep configuration
 "
-let g:rg_highlight=1
+let g:rg_highlight = 1
 
 "
 " NERDTree configuration

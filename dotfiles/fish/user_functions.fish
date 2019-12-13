@@ -45,3 +45,7 @@ end
 function fdeployment -d "Fuzzy-find and get k8s deployment id"
   kubectl get deployments | fzf | awk '{print $1}'
 end
+
+function do-prod -d "Download kubectl config for DO Kubernetes"
+  doctl kubernetes cluster kubeconfig save production
+end
