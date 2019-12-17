@@ -34,7 +34,6 @@ function fcluster -d "Fuzzy-find and select IBM cluster"
     set -l exportstr (ibmcloud cs cluster-config $cluster | grep export)
 
     eval $exportstr
-    kubectl cluster-info
   end
 end
 
@@ -42,10 +41,28 @@ function fpod -d "Fuzzy-find and get k8s pod id"
   kubectl get pods | fzf | awk '{print $1}'
 end
 
+function fingress -d "Fuzzy-find and get k8s ingres id"
+  kubectl get ingresses | fzf | awk '{print $1}'
+end
+
+function fconfigmap -d "Fuzzy-find and edit k8s configmap id"
+  kubectl get configmaps | fzf | awk '{print $1}'
+end
+
+function fsecret -d "Fuzzy-find and edit k8s secret id"
+  kubectl get secrets | fzf | awk '{print $1}'
+end
+
+function fsealedsecret -d "Fuzzy-find and edit k8s sealed secret id"
+  kubectl get sealedsecrets | fzf | awk '{print $1}'
+end
+
 function fdeployment -d "Fuzzy-find and get k8s deployment id"
   kubectl get deployments | fzf | awk '{print $1}'
 end
 
-function do-prod -d "Download kubectl config for DO Kubernetes"
-  doctl kubernetes cluster kubeconfig save production
+function aws-kibana -d "Port forward K8s kibana to localhost and copy the password to clipboard"
+  kubectl get secret efk-es-elastic-user -o json -n monitoring -o=jsonpath='{.data.elastic}' -n monitoring | base64 --decode | pbcopy
+  open https://localhost:5601
+  kubectl port-forward service/efk-kb-http 5601:5601 -n monitoring
 end
