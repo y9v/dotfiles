@@ -27,7 +27,7 @@ function fnvim -d "Fuzzy-find file and open in nvim"
   fzf | xargs nvim
 end
 
-function fcluster -d "Fuzzy-find and select IBM cluster"
+function fibmcluster -d "Fuzzy-find and select IBM cluster"
   set -l cluster (ibmcloud cs clusters -s | awk '{print $1}' | fzf)
 
   if [ $cluster ]
@@ -35,6 +35,10 @@ function fcluster -d "Fuzzy-find and select IBM cluster"
 
     eval $exportstr
   end
+end
+
+function fawscluster -d "Fuzzy-find and select IBM cluster"
+  aws-okta select (aws-okta list | tail +2 | awk '{print $1}' | fzf)
 end
 
 function fpod -d "Fuzzy-find and get k8s pod id"
