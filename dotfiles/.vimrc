@@ -154,10 +154,13 @@ endif
 
 nnoremap <Leader>T <C-W><S-T>
 nnoremap <Leader>t :TagbarToggle<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+
+" vim tmux navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
 
 "
 " Configuration
