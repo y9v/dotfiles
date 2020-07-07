@@ -27,20 +27,6 @@ function fnvim -d "Fuzzy-find file and open in nvim"
   fzf | xargs nvim
 end
 
-function fibmcluster -d "Fuzzy-find and select IBM cluster"
-  set -l cluster (ibmcloud cs clusters -s | awk '{print $1}' | fzf)
-
-  if [ $cluster ]
-    set -l exportstr (ibmcloud cs cluster-config $cluster | grep export)
-
-    eval $exportstr
-  end
-end
-
-function fawscluster -d "Fuzzy-find and select IBM cluster"
-  aws-okta select (aws-okta list | tail +2 | awk '{print $1}' | fzf)
-end
-
 function fpod -d "Fuzzy-find and get k8s pod id"
   kubectl get pods | fzf | awk '{print $1}'
 end
@@ -63,10 +49,4 @@ end
 
 function fdeployment -d "Fuzzy-find and get k8s deployment id"
   kubectl get deployments | fzf | awk '{print $1}'
-end
-
-function aws-kibana -d "Port forward K8s kibana to localhost and copy the password to clipboard"
-  kubectl get secret efk-es-elastic-user -o json -n monitoring -o=jsonpath='{.data.elastic}' -n monitoring | base64 --decode | pbcopy
-  open https://localhost:5601
-  kubectl port-forward service/efk-kb-http 5601:5601 -n monitoring
 end
