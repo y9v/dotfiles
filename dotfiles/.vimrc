@@ -232,6 +232,9 @@ map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
 map <silent> <C-t>l :TestLast<CR>
 
+" For editing tar files (first run `brew install gnu-tar`)
+let g:tar_cmd="/usr/local/bin/gtar"
+
 "
 " Webdev icons
 "

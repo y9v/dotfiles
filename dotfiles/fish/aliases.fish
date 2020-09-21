@@ -5,4 +5,4 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias mux="tmuxinator"
 alias jump="ssh -C -X -Y -A -D 3130 -i ~/.ssh/id_rsa ylebede@jump"
-alias do-prod="export KUBECONFIG=/Users/lebedev/kubeconfigs/do-prod.yaml"
+alias do-prod="export KUBECONFIG=/Users/yurylebedev/kubeconfigs/do-prod.yaml"
