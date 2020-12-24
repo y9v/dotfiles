@@ -130,8 +130,8 @@ nnoremap <silent> <C-g>c :GitGutterToggle<CR>
 "
 " Fugitive
 "
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gs :Git<CR>
+nmap <leader>gb :Git blame<CR>
 
 "
 " FZF

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 /usr/bin/pkill -9 gpg-agent
-/usr/local/bin/gpgconf --launch gpg-agent
-/usr/local/bin/gpg-connect-agent updatestartuptty /bye
+/usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
+/usr/local/MacGPG2/bin/gpg-connect-agent updatestartuptty /bye
 
 exit $?

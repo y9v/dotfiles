@@ -1,7 +1,7 @@
 [user]
   name = Yury Lebedev
   email = lebedev.yurii@gmail.com
-	signingkey = 0xF76D2629DADC18B6
+  signingkey = 0xF76D2629DADC18B6
 
 [credential]
   helper = osxkeychain
@@ -10,8 +10,8 @@
   default = simple
 
 [core]
-  editor = vim
-	excludesfile = ~/.gitignore
+  editor = nvim
+  excludesfile = ~/.gitignore
 
 [help]
   # Automatically correct and execute mistyped commands
@@ -26,13 +26,13 @@
   gpgsign = true
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [diff "sopsdiffer"]
-	textconv = sops -d
+  textconv = sops -d
 
 [gpg]
-	program = gpg
+  program = /usr/local/MacGPG2/bin/gpg2
