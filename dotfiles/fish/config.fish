@@ -1,6 +1,7 @@
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/variables.fish
 source ~/.config/fish/user_functions.fish
+source ~/.config/fish/local.fish
 
 set fish_greeting ""
 set theme_color_scheme gruvbox
