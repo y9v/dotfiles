@@ -2,7 +2,7 @@
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
@@ -25,6 +25,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
 Plug 'nightsense/snow'
 Plug 'tjammer/blayu.vim'
+Plug 'Olical/conjure'
+Plug 'tpope/vim-dispatch'
+Plug 'clojure-vim/vim-jack-in'
+Plug 'radenling/vim-dispatch-neovim'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'luochen1990/rainbow'
+Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 set encoding=UTF-8
@@ -105,12 +113,13 @@ endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme blayu
-  let g:lightline.colorscheme = 'blayu'
+  colorscheme night-owl
+  let g:lightline.colorscheme = 'nightowl'
   call lightline#init()
   call lightline#update()
 endfunction
 
+let g:rainbow_active = 0
 call DarkTheme()
 
 command! -bar Light call LightTheme()
@@ -119,6 +128,7 @@ command! -bar Dark call DarkTheme()
 " Leader key
 "
 let mapleader=',' " Remap the leader key
+let maplocalleader=","
 
 "
 " Additional mappings
@@ -136,7 +146,7 @@ nmap <leader>gb :Git blame<CR>
 "
 " FZF
 "
-map <silent> <C-p>f :GFiles<CR>
+map <silent> <C-p>f :Files<CR>
 map <silent> <C-p>b :Buffers<CR>
 map <silent> <C-p>s :GFiles?<CR>
 map <silent> <C-p>t :Tags<CR>

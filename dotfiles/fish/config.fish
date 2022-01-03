@@ -19,4 +19,4 @@ export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export BAT_STYLE=numbers,changes
 export BAT_THEME=1337
 
-source /usr/local/opt/asdf/asdf.fish
+source /usr/local/opt/asdf/libexec/asdf.fish
