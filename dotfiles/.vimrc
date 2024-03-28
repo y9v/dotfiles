@@ -22,8 +22,6 @@ Plug 'majutsushi/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'mhartington/oceanic-next'
-Plug 'nightsense/snow'
 Plug 'tjammer/blayu.vim'
 Plug 'Olical/conjure'
 Plug 'tpope/vim-dispatch'
@@ -33,6 +31,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'luochen1990/rainbow'
 Plug 'haishanh/night-owl.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
 
 set encoding=UTF-8
@@ -46,7 +45,8 @@ endif
 
 syntax on
 set nocompatible
-set nocursorline
+set cursorline
+set t_Co=256
 set ttyfast
 set lazyredraw
 set noshowcmd
@@ -105,17 +105,19 @@ endfunction
 "
 function LightTheme()
   set background=light
-  colorscheme snow
-  let g:lightline.colorscheme = 'snow_light'
+  colorscheme onehalflight
+  let g:lightline = { 'colorscheme': 'onehalflight' }
   call lightline#init()
+  call lightline#colorscheme()
   call lightline#update()
 endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme night-owl
-  let g:lightline.colorscheme = 'nightowl'
+  colorscheme onehalfdark
+  let g:lightline = { 'colorscheme': 'onehalfdark' }
   call lightline#init()
+  call lightline#colorscheme()
   call lightline#update()
 endfunction
 

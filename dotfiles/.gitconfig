@@ -36,3 +36,19 @@
 
 [gpg]
   program = /usr/local/bin/gpg
+[safe]
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/terraform-provider-hirefire
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/heroku-log-drain
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/importer
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/deals_service
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/car-data-app
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/car-data-utils
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/quotes_site
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/dealers_site
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/research_site/
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/research_site
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/flatmin
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/dashy
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/ftp-transfer-auth/
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/ftp-transfer-auth
+	directory = /Users/yury.lebedev@carwow.de/projects/carwow/dev-environment
