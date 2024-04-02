@@ -15,8 +15,8 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
 	- rm -f ~/.asdfrc
 	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
-	- rm -f ~/.config/alacritty/alacritty.yml
-	- ln -s ~/dotfiles/dotfiles/.alacritty.yml ~/.config/alacritty/alacritty.yml
+	- rm -f ~/.config/alacritty/alacritty.toml
+	- ln -s ~/dotfiles/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 	- rm -f ~/.default-gems
 	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
 	- rm -f ~/.config/fish/aliases.fish
@@ -33,7 +33,3 @@ bootstrap:
 	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
 	- rm -f ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-	- rm -f ~/.sleep
-	- ln -s ~/dotfiles/dotfiles/bin/sleep /usr/local/bin/sleep
-	- rm -f ~/.wakeup
-	- ln -s ~/dotfiles/dotfiles/bin/wakeup /usr/local/bin/wakeup
