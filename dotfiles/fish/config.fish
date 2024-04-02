@@ -12,11 +12,11 @@ function fish_vi_cursor; end
 fish_vi_key_bindings
 
 # use gpg agent instead of ssh agent
-export GPG_TTY=(tty)
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
 export BAT_STYLE=numbers,changes
 export BAT_THEME=1337
 
-source /usr/local/opt/asdf/libexec/asdf.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish

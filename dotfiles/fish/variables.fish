@@ -8,9 +8,12 @@ set -Ux BUNDLER_EDITOR vim
 set -Ux LC_ALL en_US.UTF-8
 set -Ux LANG en_US.UTF-8
 
-set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_pa
+set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "$GOPATH/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/gnu-sed/libexec/gnubin" $fish_user_paths
-set -g fish_user_paths "/Users/yury.lebedev@carwow.de/development/carwow/dev-environment/bin" $fish_user_paths
+
+set -g fish_user_paths "(brew --prefix)/opt/coreutils/libexec/gnubin" $fish_user_paths
+set -g fish_user_paths "(brew --prefix)/opt/findutils/libexec/gnubin" $fish_user_paths
+set -g fish_user_paths "(brew --prefix)/opt/gnu-sed/libexec/gnubin" $fish_user_paths
+set -g fish_user_paths $fish_user_paths "$HOME/development/carwow/dev-environment/bin"
