@@ -32,6 +32,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'luochen1990/rainbow'
 Plug 'haishanh/night-owl.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 set encoding=UTF-8
@@ -114,8 +115,8 @@ endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme onehalfdark
-  let g:lightline = { 'colorscheme': 'onehalfdark' }
+  colorscheme catppuccin-macchiato
+  let g:lightline = {'colorscheme': 'catppuccin'}
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
