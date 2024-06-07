@@ -1,6 +1,6 @@
 alias yank="tr -d '\n' | pbcopy"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
-alias update="brew update; brew upgrade; brew cleanup; omf update"
+alias update="brew update; brew upgrade; brew cleanup"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias mux="tmuxinator"

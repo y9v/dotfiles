@@ -50,9 +50,3 @@ end
 function fdeployment -d "Fuzzy-find and get k8s deployment id"
   kubectl get deployments | fzf | awk '{print $1}'
 end
-
-function k3s-do -d "Export DO k3s config"
-  scp -q root@k3s-do:/etc/rancher/k3s/k3s.yaml ~/.kube/k3s.yaml
-  sed -i -e 's/127\.0\.0\.1/k3s-do/g' ~/.kube/k3s.yaml
-  export KUBECONFIG=/Users/yurylebedev/.kube/k3s.yaml
-end

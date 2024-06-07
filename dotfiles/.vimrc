@@ -2,8 +2,10 @@
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'scrooloose/nerdtree'
 Plug 'jremmen/vim-ripgrep'
 Plug 'sjl/gundo.vim'
@@ -149,13 +151,22 @@ nmap <leader>gb :Git blame<CR>
 "
 " FZF
 "
-map <silent> <C-p>f :Files<CR>
-map <silent> <C-p>b :Buffers<CR>
-map <silent> <C-p>s :GFiles?<CR>
-map <silent> <C-p>t :Tags<CR>
-map <silent> <C-p>m :Marks<CR>
-map <silent> <C-p>h :History<CR>
-map <silent> <C-p>c :BCommits<CR>
+" map <silent> <C-p>f :Files<CR>
+" map <silent> <C-p>b :Buffers<CR>
+" map <silent> <C-p>s :GFiles?<CR>
+" map <silent> <C-p>t :Tags<CR>
+" map <silent> <C-p>m :Marks<CR>
+" map <silent> <C-p>h :History<CR>
+" map <silent> <C-p>c :BCommits<CR>
+
+"
+" Telescope
+"
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fs <cmd>Telescope search_history<cr>
+nnoremap <leader>fm <cmd>Telescope marks<cr>
 
 " Use Esc to exit terminal-mode.
 tnoremap <Esc> <C-\><C-n>

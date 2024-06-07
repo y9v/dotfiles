@@ -16,4 +16,7 @@ set -g fish_user_paths "/usr/local/bin" $fish_user_paths
 set -g fish_user_paths "(brew --prefix)/opt/coreutils/libexec/gnubin" $fish_user_paths
 set -g fish_user_paths "(brew --prefix)/opt/findutils/libexec/gnubin" $fish_user_paths
 set -g fish_user_paths "(brew --prefix)/opt/gnu-sed/libexec/gnubin" $fish_user_paths
+
+set -g fish_user_paths "$HOME/.asdf/shims" $fish_user_paths
+
 set -g fish_user_paths $fish_user_paths "$HOME/development/carwow/dev-environment/bin"
