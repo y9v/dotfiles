@@ -293,3 +293,11 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack'] = "\ufc29"
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['vue'] = "\ufd42"
 
 runtime macros/matchit.vim
+
+"
+" Ruby LSP
+"
+let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
+lua << EOF
+require'lspconfig'.ruby_lsp.setup{}
+EOF

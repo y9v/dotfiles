@@ -1,5 +1,3 @@
 bundler
-rubocop
-brakeman
-pry
-tmuxinator
+neovim
+ruby-lsp
