@@ -283,4 +283,5 @@ runtime macros/matchit.vim
 
 lua <<EOF
 require('lspconfig').ruby_lsp.setup{}
+require('lspconfig').clangd.setup{}
 EOF
