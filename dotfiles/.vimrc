@@ -2,36 +2,23 @@
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
-" Plug 'junegunn/fzf'
-" Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'scrooloose/nerdtree'
-Plug 'jremmen/vim-ripgrep'
-Plug 'sjl/gundo.vim'
+Plug 'neovim/nvim-lspconfig'
 Plug 'janko-m/vim-test'
-Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'airblade/vim-gitgutter'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'sheerun/vim-polyglot'
-Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-dispatch'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tjammer/blayu.vim'
-Plug 'Olical/conjure'
-Plug 'tpope/vim-dispatch'
-Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'luochen1990/rainbow'
 Plug 'haishanh/night-owl.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -294,10 +281,6 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['vue'] = "\ufd42"
 
 runtime macros/matchit.vim
 
-"
-" Ruby LSP
-"
-let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
-lua << EOF
-require'lspconfig'.ruby_lsp.setup{}
+lua <<EOF
+require('lspconfig').ruby_lsp.setup{}
 EOF
