@@ -1,0 +1,16 @@
+[core]
+  editor = nvim
+	hooksPath = /usr/local/dd/global_hooks
+
+[user]
+	name = Yury Lebedev
+	email = yury.lebedev@datadoghq.com
+	signingkey = C7CCFFBE9010B7A24A61ACCE8F38830C077E5B8B
+
+[commit]
+	gpgsign = true
+
+[user]
+  name = Yury Lebedev
+  email = lebedev.yurii@gmail.com
+  signingkey = 0xF76D2629DADC18B6
