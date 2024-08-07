@@ -22,31 +22,3 @@ end
 function fkill -d "Fuzzy-find and kill process"
   ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill
 end
-
-function fnvim -d "Fuzzy-find file and open in nvim"
-  fzf | xargs nvim
-end
-
-function fpod -d "Fuzzy-find and get k8s pod id"
-  kubectl get pods | fzf | awk '{print $1}'
-end
-
-function fingress -d "Fuzzy-find and get k8s ingres id"
-  kubectl get ingresses | fzf | awk '{print $1}'
-end
-
-function fconfigmap -d "Fuzzy-find and edit k8s configmap id"
-  kubectl get configmaps | fzf | awk '{print $1}'
-end
-
-function fsecret -d "Fuzzy-find and edit k8s secret id"
-  kubectl get secrets | fzf | awk '{print $1}'
-end
-
-function fsealedsecret -d "Fuzzy-find and edit k8s sealed secret id"
-  kubectl get sealedsecrets | fzf | awk '{print $1}'
-end
-
-function fdeployment -d "Fuzzy-find and get k8s deployment id"
-  kubectl get deployments | fzf | awk '{print $1}'
-end

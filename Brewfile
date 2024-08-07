@@ -1,0 +1,12 @@
+cask "1password-cli"
+
+brew "asdf"
+brew "coreutils"
+brew "fish"
+brew "fzf"
+brew "git"
+brew "gnupg"
+brew "nvim"
+brew "pinentry-mac"
+brew "tmux"
+brew "ykman"

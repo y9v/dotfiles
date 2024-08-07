@@ -89,7 +89,6 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
-
 "
 " Theme switching
 "
@@ -134,17 +133,6 @@ nnoremap <silent> <C-g>c :GitGutterToggle<CR>
 "
 nmap <leader>gs :Git<CR>
 nmap <leader>gb :Git blame<CR>
-
-"
-" FZF
-"
-" map <silent> <C-p>f :Files<CR>
-" map <silent> <C-p>b :Buffers<CR>
-" map <silent> <C-p>s :GFiles?<CR>
-" map <silent> <C-p>t :Tags<CR>
-" map <silent> <C-p>m :Marks<CR>
-" map <silent> <C-p>h :History<CR>
-" map <silent> <C-p>c :BCommits<CR>
 
 "
 " Telescope
@@ -192,14 +180,6 @@ set smartcase           " ... unless the query has capital letters
 
 set noswapfile
 
-" Don't show ~ for blank lines
-" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
-"
-" RipGrep configuration
-"
-let g:rg_highlight = 1
-
 "
 " NERDTree configuration
 "
@@ -231,20 +211,10 @@ let g:gitgutter_enabled=0
 "
 let test#strategy = "neovim"
 
-function! DockerComposeTransformation(cmd) abort
-  return 'docker-compose run --rm -e "RAILS_ENV=test" dev ' . a:cmd
-endfunction
-
-let g:test#custom_transformations = {'docker-compose': function('DockerComposeTransformation')}
-command! -bar DockerComposeEnv let g:test#transformation = 'docker-compose'
-
 map <silent> <C-t>n :TestNearest<CR>
 map <silent> <C-t>f :TestFile<CR>
 map <silent> <C-t>s :TestSuite<CR>
 map <silent> <C-t>l :TestLast<CR>
-
-" For editing tar files (first run `brew install gnu-tar`)
-let g:tar_cmd="/usr/local/bin/gtar"
 
 "
 " Webdev icons

@@ -1,35 +1,21 @@
-bootstrap:
-	- rm -f ~/.gitconfig
-	- ln -s ~/dotfiles/dotfiles/.gitconfig ~/.gitconfig
-	- rm -f ~/.gitignore
-	- ln -s ~/dotfiles/dotfiles/.gitignore ~/.gitignore
-	- rm -f ~/.gitmessage
-	- ln -s ~/dotfiles/dotfiles/.gitmessage ~/.gitmessage
-	- rm -f ~/.tmux.conf
-	- ln -s ~/dotfiles/dotfiles/.tmux.conf ~/.tmux.conf
+install:
+	# install homebrew
+	- brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	- brew bundle
+	# install vim-plug
+	- curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	# install oh my fish
+	- curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+	# set fish theme
+	- omf install harleen
+
+symlink:
 	- rm -f ~/.config/nvim/init.vim
-	- ln -s ~/dotfiles/dotfiles/.vimrc ~/.config/nvim/init.vim
-	- rm -f ~/.vimrc
-	- ln -s ~/dotfiles/dotfiles/.vimrc ~/.vimrc
-	- rm -f ~/.hushlogin
-	- ln -s ~/dotfiles/dotfiles/.hushlogin ~/.hushlogin
-	- rm -f ~/.asdfrc
-	- ln -s ~/dotfiles/dotfiles/.asdfrc ~/.asdfrc
-	- rm -f ~/.config/alacritty/alacritty.toml
-	- ln -s ~/dotfiles/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-	- rm -f ~/.default-gems
-	- ln -s ~/dotfiles/dotfiles/.default-gems ~/.default-gems
-	- rm -f ~/.config/fish/aliases.fish
-	- rm -f ~/.psqlrc
-	- ln -s ~/dotfiles/dotfiles/.psqlrc ~/.psqlrc
-	- ln -s ~/dotfiles/dotfiles/fish/aliases.fish ~/.config/fish/aliases.fish
-	- rm -f ~/.config/fish/user_functions.fish
-	- ln -s ~/dotfiles/dotfiles/fish/user_functions.fish ~/.config/fish/user_functions.fish
-	- rm -f ~/.config/fish/variables.fish
-	- ln -s ~/dotfiles/dotfiles/fish/variables.fish ~/.config/fish/variables.fish
+	- ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 	- rm -f ~/.config/fish/config.fish
-	- ln -s ~/dotfiles/dotfiles/fish/config.fish ~/.config/fish/config.fish
-	- rm -f ~/.gnupg/gpg.conf
-	- ln -s ~/dotfiles/dotfiles/gpg.conf ~/.gnupg/gpg.conf
+	- ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
+	- ln -s ~/dotfiles/fish/functions/user.fish ~/.config/fish/functions/user.fish
 	- rm -f ~/.gnupg/gpg-agent.conf
-	- ln -s ~/dotfiles/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+	- ln -s ~/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+	# do not display last login timestamp
+	- touch ~/.hushlogin
