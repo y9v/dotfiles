@@ -14,4 +14,8 @@ set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+set -Ux EDITOR vim
+set -Ux BUNDLER_EDITOR vim
+
+set -g fish_user_paths "$HOME/.asdf/shims" $fish_user_paths
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
