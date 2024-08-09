@@ -17,13 +17,7 @@ symlink:
 	- rm -f ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/fish/functions/user.fish ~/.config/fish/functions/user.fish
-	- rm -f ~/.gnupg/gpg-agent.conf
-	- mkdir ~/.gnupg
-	- chown -R $(whoami) ~/.gnupg/
-	- chmod 600 ~/.gnupg/*
-	- chmod 700 ~/.gnupg
 	- ln -s ~/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-	- rm -f ~/.gnupg/gpg-agent.conf
 	# do not display last login timestamp
 	- touch ~/.hushlogin
