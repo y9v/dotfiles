@@ -23,5 +23,7 @@ symlink:
 	- chmod 600 ~/.gnupg/*
 	- chmod 700 ~/.gnupg
 	- ln -s ~/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+	- ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+	- rm -f ~/.gnupg/gpg-agent.conf
 	# do not display last login timestamp
 	- touch ~/.hushlogin
