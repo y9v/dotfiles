@@ -7,6 +7,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'scrooloose/nerdtree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'janko-m/vim-test'
+Plug 'jlcrochet/vim-rbs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
