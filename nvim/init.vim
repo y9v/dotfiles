@@ -2,12 +2,14 @@
 " Plugins
 "
 call plug#begin('~/.vim/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'github/copilot.vim'
+Plug 'janko-m/vim-test'
+Plug 'neovim/nvim-lspconfig'
+Plug 'jlcrochet/vim-rbs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'scrooloose/nerdtree'
-Plug 'neovim/nvim-lspconfig'
-Plug 'janko-m/vim-test'
-Plug 'jlcrochet/vim-rbs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -15,11 +17,11 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'radenling/vim-dispatch-neovim'
 Plug 'itchyny/lightline.vim'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'tjammer/blayu.vim'
-Plug 'radenling/vim-dispatch-neovim'
 Plug 'haishanh/night-owl.vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
