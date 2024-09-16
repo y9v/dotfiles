@@ -152,6 +152,10 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fs <cmd>Telescope search_history<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
 
+lua << EOF
+require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true })
+EOF
+
 " Use Esc to exit terminal-mode.
 tnoremap <Esc> <C-\><C-n>
 
