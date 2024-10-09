@@ -121,8 +121,9 @@ EOF
 "
 function LightTheme()
   set background=light
-  "colorscheme onehalflight
-  "let g:lightline = { 'colorscheme': 'onehalflight' }
+  colorscheme rose-pine-dawn
+  let g:lightline.colorscheme = 'one'
+  execute 'source' globpath(&rtp, 'autoload/lightline/colorscheme/one.vim')
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
@@ -130,14 +131,14 @@ endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme rose-pine
-  let g:lightline = {'colorscheme': 'one'}
+  colorscheme rose-pine-moon
+  let g:lightline.colorscheme = 'one'
+  execute 'source' globpath(&rtp, 'autoload/lightline/colorscheme/one.vim')
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
 endfunction
 
-let g:rainbow_active = 0
 call DarkTheme()
 
 command! -bar Light call LightTheme()
