@@ -1,31 +1,32 @@
 "
 " Plugins
 "
-call plug#begin('~/.vim/plugged')
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'github/copilot.vim'
-Plug 'janko-m/vim-test'
-Plug 'neovim/nvim-lspconfig'
-Plug 'jlcrochet/vim-rbs'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-Plug 'itchyny/lightline.vim'
+lua <<EOF
+require "paq" {
+    "savq/paq-nvim", -- Let Paq manage itself
 
-Plug 'ryanoasis/vim-devicons'
-Plug 'tjammer/blayu.vim'
-Plug 'haishanh/night-owl.vim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-call plug#end()
+    "christoomey/vim-tmux-navigator",
+    "github/copilot.vim",
+    "janko-m/vim-test",
+    "neovim/nvim-lspconfig",
+    "jlcrochet/vim-rbs",
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+    "scrooloose/nerdtree",
+    "tpope/vim-fugitive",
+    "tpope/vim-commentary",
+    "tpope/vim-surround",
+    "tpope/vim-endwise",
+    "tpope/vim-repeat",
+    "tpope/vim-unimpaired",
+    "tpope/vim-dispatch",
+    "radenling/vim-dispatch-neovim",
+    "itchyny/lightline.vim",
+
+    "ryanoasis/vim-devicons",
+    { "rose-pine/neovim", as = "rose-pine" },
+}
+EOF
 
 set encoding=UTF-8
 
@@ -98,13 +99,30 @@ function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
 
+lua <<EOF
+require("rose-pine").setup({
+    variant = "auto", -- auto, main, moon, or dawn
+    dark_variant = "moon", -- main, moon, or dawn
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+
+    enable = { terminal = true },
+
+    styles = {
+        bold = true,
+        italic = true,
+        transparency = false,
+    },
+})
+EOF
+
 "
 " Theme switching
 "
 function LightTheme()
   set background=light
-  colorscheme onehalflight
-  let g:lightline = { 'colorscheme': 'onehalflight' }
+  "colorscheme onehalflight
+  "let g:lightline = { 'colorscheme': 'onehalflight' }
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
@@ -112,8 +130,8 @@ endfunction
 
 function DarkTheme()
   set background=dark
-  colorscheme catppuccin-macchiato
-  let g:lightline = {'colorscheme': 'catppuccin'}
+  colorscheme rose-pine
+  let g:lightline = {'colorscheme': 'one'}
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
