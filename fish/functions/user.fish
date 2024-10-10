@@ -22,3 +22,7 @@ end
 function fkill -d "Fuzzy-find and kill process"
   ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill
 end
+
+function desk -d "Control Ikea Idasen desk height"
+  /Users/yury.lebedev/Library/Python/3.9/bin/idasen-controller --move-to $argv
+end
