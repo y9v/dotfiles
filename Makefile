@@ -5,10 +5,11 @@ install:
 	# change shell to fish
 	- echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 	- chsh -s /opt/homebrew/bin/fish
-	# install oh my fish
-	- curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+	# install fisher
+	- curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 	# set fish theme
-	- omf install harleen
+	- fisher install IlanCosman/tide@v6
+	- set --universal tide_right_prompt_items
 
 symlink:
 	- rm -f ~/.config/nvim/init.vim
