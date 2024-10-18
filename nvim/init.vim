@@ -281,3 +281,10 @@ lua <<EOF
 require('lspconfig').ruby_lsp.setup{}
 require('lspconfig').clangd.setup{}
 EOF
+
+highlight Cursor guifg=black guibg=#3e8fb0
+highlight iCursor guifg=black guibg=#3e8fb0
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
