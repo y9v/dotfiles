@@ -1,6 +1,7 @@
 [core]
   editor = nvim
 	hooksPath = /usr/local/dd/global_hooks
+  ; excludesfile = ~/.gitignore
 
 [user]
 	name = Yury Lebedev
@@ -9,8 +10,41 @@
 
 [commit]
 	gpgsign = true
+  verbose = true
 
-[user]
-  name = Yury Lebedev
-  email = lebedev.yurii@gmail.com
-  signingkey = 0xF76D2629DADC18B6
+[column]
+  ui = auto
+
+[branch]
+  sort = -committerdate
+
+[tag]
+  sort = version:refname
+
+[init]
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+
+[help]
+  autocorrect = prompt
+
+[rerere]
+  enabled = true
+  autoupdate = true
+
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
