@@ -5,8 +5,8 @@
 
 [user]
 	name = Yury Lebedev
-	email = yury.lebedev@datadoghq.com
-	signingkey = C7CCFFBE9010B7A24A61ACCE8F38830C077E5B8B
+	email = lebedev.yurii@gmail.com
+	signingkey = 0xF76D2629DADC18B6
 
 [commit]
 	gpgsign = true
