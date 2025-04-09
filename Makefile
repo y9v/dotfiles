@@ -12,9 +12,8 @@ install:
 	- set --universal tide_right_prompt_items
 
 symlink:
-	- rm -f ~/.config/nvim/init.vim
-	- mkdir ~/.config/nvim
-	- ln -s ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+	- rm -rf ~/.config/nvim
+	- ln -s ~/dotfiles/nvim ~/.config/nvim
 	- rm -f ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 	- ln -s ~/dotfiles/fish/functions/user.fish ~/.config/fish/functions/user.fish
