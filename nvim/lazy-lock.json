@@ -18,8 +18,8 @@
   "mini.pairs": { "branch": "main", "commit": "69864a2efb36c030877421634487fd90db1e4298" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "nui.nvim": { "branch": "main", "commit": "8d3bce9764e627b62b07424e0df77f680d47ffdb" },
-  "nvim-lint": { "branch": "master", "commit": "e7b4ffa6ab763af012e38b21af2c9159f10d2d33" },
-  "nvim-lspconfig": { "branch": "master", "commit": "94dda50b2d9a29d0b76562a9027029538840e2d7" },
+  "nvim-lint": { "branch": "master", "commit": "5b1bdf306bd3e565908145279e8bbfc594dac3b3" },
+  "nvim-lspconfig": { "branch": "master", "commit": "4ea9083b6d3dff4ddc6da17c51334c3255b7eba5" },
   "nvim-treesitter": { "branch": "master", "commit": "0e21ee8df6235511c02bab4a5b391d18e165a58d" },
   "nvim-treesitter-endwise": { "branch": "master", "commit": "63a8f855c6b6019ef9f7f63b5c59b8a00c215d0d" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "698b5f805722254bca3c509591c1806d268b6c2f" },
@@ -31,5 +31,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
   "ts-comments.nvim": { "branch": "main", "commit": "1bd9d0ba1d8b336c3db50692ffd0955fe1bb9f0c" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "791dacfcfc8ccb7f6eb1c853050883b03e5a22fe" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
 }
