@@ -11,7 +11,6 @@ return {
         },
         solargraph = {},
       },
-      autoformat = false,
     },
   },
 }
