@@ -2,6 +2,7 @@ cask "1password-cli"
 
 brew "asdf"
 brew "bash"
+brew "blueutil"
 brew "coreutils"
 brew "fish"
 brew "fd"
