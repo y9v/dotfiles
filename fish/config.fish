@@ -18,3 +18,6 @@ set -Ux EDITOR nvim
 set -Ux BUNDLER_EDITOR nvim
 
 set -gx --prepend PATH "$HOME/.asdf/shims"
+
+# Created by `pipx` on 2025-09-17 11:38:32
+set PATH $PATH /Users/yury.lebedev/.local/bin
