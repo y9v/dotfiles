@@ -21,3 +21,6 @@ set -gx --prepend PATH "$HOME/.asdf/shims"
 
 # Created by `pipx` on 2025-09-17 11:38:32
 set PATH $PATH /Users/yury.lebedev/.local/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yury.lebedev/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/yury.lebedev/Downloads/google-cloud-sdk/path.fish.inc'; end
