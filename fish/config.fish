@@ -16,8 +16,10 @@ gpgconf --launch gpg-agent
 
 set -Ux EDITOR nvim
 set -Ux BUNDLER_EDITOR nvim
+set -Ux DATADOG_ROOT "/Users/yury.lebedev/code/dd"
 
 set -gx --prepend PATH "$HOME/.asdf/shims"
+set -gx --prepend PATH "$HOME/go/src/github.com/DataDog/devtools/bin"
 
 # Created by `pipx` on 2025-09-17 11:38:32
 set PATH $PATH /Users/yury.lebedev/.local/bin

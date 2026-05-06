@@ -24,29 +24,3 @@ end
 function fkill -d "Fuzzy-find and kill process"
     ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill
 end
-
-function desk -d "Control Ikea Idasen desk height"
-    /Users/yury.lebedev/Library/Python/3.9/bin/idasen-controller --move-to $argv
-end
-
-function trackpad -d "Connect and disconnect Apple Magic Trackpad"
-    set TRACKPAD_MAC 3c-a6-f6-b9-7e-2d
-
-    if test (count $argv) -eq 0
-        echo "Usage: trackpad --connect | --disconnect"
-        return 1
-    end
-
-    switch $argv[1]
-        case --connect
-            echo "Connecting to Magic Trackpad ($TRACKPAD_MAC)..."
-            blueutil --connect $TRACKPAD_MAC
-        case --disconnect
-            echo "Disconnecting Magic Trackpad ($TRACKPAD_MAC)..."
-            blueutil --disconnect $TRACKPAD_MAC
-        case '*'
-            echo "Unknown option: $argv[1]"
-            echo "Usage: trackpad --connect | --disconnect"
-            return 1
-    end
-end

@@ -1,0 +1,117 @@
+#!/usr/bin/env ruby
+
+# Usage: desk [command]
+#
+# Control an Ikea Idasen / Linak desk via idasen-controller.
+
+require "open3"
+
+IDASEN = "/Users/yury.lebedev/Library/Python/3.9/bin/idasen-controller"
+CONFIG_PATH = File.expand_path("~/Library/Application Support/linak-controller/config.yaml")
+
+HELP = <<~HELP
+  Usage: desk [command]
+
+  Control an Ikea Idasen / Linak desk via idasen-controller.
+
+  Commands:
+    desk                  Toggle between sit and stand favourites.
+    desk <name>           Move to favourite <name> (e.g. sit, stand).
+    desk <height-mm>      Move to a specific height in millimetres.
+    desk save <name>      Save current desk height as favourite <name>.
+    desk -h, --help       Show this help.
+HELP
+
+def read_current_height
+  warn "Reading current desk height (Bluetooth)..."
+  height = nil
+  _stdin, output, wait_thr = Open3.popen2e(IDASEN, "--watch")
+  begin
+    output.each_line do |line|
+      warn "  #{line.chomp}"
+      if (m = line.match(/Height:\s+(\d+)mm/))
+        height = m[1].to_i
+        break
+      end
+    end
+  ensure
+    begin
+      Process.kill("TERM", wait_thr.pid) if wait_thr.alive?
+    rescue Errno::ESRCH
+      # process already exited
+    end
+  end
+  _stdin.close
+  output.close
+  wait_thr.value
+  height
+end
+
+def read_favourites
+  return {} unless File.exist?(CONFIG_PATH)
+  in_block = false
+  favs = {}
+  File.foreach(CONFIG_PATH) do |line|
+    if line.match?(/^favourites:[ \t]*(#.*)?$/)
+      in_block = true
+      next
+    end
+    next unless in_block
+    if (m = line.match(/^[ \t]+(\w+):[ \t]*(\d+)/))
+      favs[m[1]] = m[2].to_i
+    elsif line.match?(/^\S/)
+      break
+    end
+  end
+  favs
+end
+
+def move_to(target)
+  exec(IDASEN, "--move-to", target.to_s)
+end
+
+def save_favourite(name)
+  abort "Config not found: #{CONFIG_PATH}" unless File.exist?(CONFIG_PATH)
+  height = read_current_height
+  abort "Failed to read desk height" unless height
+
+  config = File.read(CONFIG_PATH)
+  update_pattern = /^(\s+#{Regexp.escape(name)}:[ \t]*)\d+(.*)$/
+  if config.match?(update_pattern)
+    config = config.sub(update_pattern, "\\1#{height}\\2")
+  elsif config.match?(/^favourites:[ \t]*\n/)
+    config = config.sub(/^(favourites:[ \t]*\n)/, "\\1  #{name}: #{height}\n")
+  else
+    abort "No 'favourites:' section found in #{CONFIG_PATH}"
+  end
+  File.write(CONFIG_PATH, config)
+  puts "Saved #{name}: #{height}mm to #{CONFIG_PATH}"
+end
+
+def toggle
+  favs = read_favourites
+  sit = favs["sit"]
+  stand = favs["stand"]
+  abort "Need both 'sit' and 'stand' favourites in #{CONFIG_PATH}" unless sit && stand
+
+  current = read_current_height
+  abort "Failed to read desk height" unless current
+
+  target_name = ((current - sit).abs < (current - stand).abs) ? "stand" : "sit"
+  puts "Toggling: #{current}mm → #{target_name} (#{favs[target_name]}mm)"
+  move_to(target_name)
+end
+
+abort "idasen-controller not found at #{IDASEN}" unless File.executable?(IDASEN)
+
+case ARGV[0]
+when nil
+  toggle
+when "-h", "--help"
+  puts HELP
+when "save"
+  abort "Usage: desk save <favourite-name>" if ARGV[1].nil? || ARGV[1].empty?
+  save_favourite(ARGV[1])
+else
+  move_to(ARGV[0])
+end

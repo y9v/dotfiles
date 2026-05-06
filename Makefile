@@ -19,5 +19,6 @@ symlink:
 	- ln -s ~/dotfiles/fish/functions/user.fish ~/.config/fish/functions/user.fish
 	- ln -s ~/dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	- ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+	- ln -s ~/dotfiles/bin/desk /opt/homebrew/bin/desk
 	# do not display last login timestamp
 	- touch ~/.hushlogin
